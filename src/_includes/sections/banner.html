@@ -1,0 +1,32 @@
+
+{% macro banner(title, url) %}
+<!-- ============================================ -->
+<!--                   Banner                     -->
+<!-- ============================================ -->
+
+<div id="banner-2285">
+  <nav class="cs-container">
+    <span class="cs-int-title"> {{title}} </span>
+        <ul class="cs-breadcrumbs">
+            <li class="cs-item">
+                <a href="/" class="cs-link">Home</a>
+            </li>
+            {% set cumulative_path = "" %} 
+            {% for segment in url.split('/') %} {% if segment.length > 0 %} 
+                {% set cumulative_path = cumulative_path + "/" + segment %}
+                    <li  class="cs-item">
+                        <a  {% if cumulative_path + '/' == url %} aria-current="page" {% endif %} class="cs-link {% if cumulative_path + '/' == url %} cs-active {% endif %}" href="{{cumulative_path}}">
+                            {{ segment | replace('-', ' ') | capitalize }}
+                        </a>
+                    </li>
+                {% endif %} 
+            {% endfor %}
+        </ul>
+    </nav>
+
+   <!--Background Image-->
+  <picture class="cs-background">
+	<img src="{% getUrl "/assets/images/cta.jpg" | resize({ width: 2500, height: 574 }) | jpeg %}" alt="" width="1920" height="441" decoding="async">
+</picture>
+</div>
+{% endmacro %} 

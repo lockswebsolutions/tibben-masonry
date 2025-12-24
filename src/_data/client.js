@@ -1,23 +1,21 @@
 module.exports = {
-    name: "Code Stitch Web Designs",
-    email: "help@codestitch.app",
-    phoneForTel: "555-779-4407",
-    phoneFormatted: "(555) 779-4407",
-    address: {
-        lineOne: "First Address Line",
-        lineTwo: "Second Address Line",
-        city: "Denver",
-        state: "CO",
-        zip: "80206",
-        country: "US",
-        mapLink: "https://maps.app.goo.gl/TEdS5KoLC9ZcULuQ6",
-    },
-    socials: {
-        facebook: "https://www.facebook.com/",
-        instagram: "https://www.instagram.com/",
-    },
-    //! Make sure you include the file protocol (e.g. https://) and that NO TRAILING SLASH is included
-    domain: "https://www.example.com",
-    // Passing the isProduction variable for use in HTML templates
-    isProduction: process.env.ELEVENTY_ENV === "PROD",
+  name: "Tibben Masonry",
+  email: "gctibben@gmail.com",
+  phoneForTel: "613-652-1212",
+  phoneFormatted: "(613) 652-1212",
+  address: {
+    lineOne: "14035 Willbruck Dr",
+    city: "Ingleside",
+    state: "ON",
+    zip: "",
+    country: "CA",
+    mapLink: "https://maps.app.goo.gl/Z5C4qtxQVW9xb6kN6",
+  },
+  socials: {
+    facebook: "https://www.facebook.com/TibbenMasonry",
+  },
+  //! Make sure you include the file protocol (e.g. https://) and that NO TRAILING SLASH is included
+  domain: "https://www.tibbenmasonry.com",
+  // Passing the isProduction variable for use in HTML templates
+  isProduction: process.env.ELEVENTY_ENV === "PROD",
 };

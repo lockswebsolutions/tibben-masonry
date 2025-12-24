@@ -1,462 +1,723 @@
 ---
-title: "Pixel Perfect Websites | Code Stitch Web Designs | Denver, CO"
-description: "Meta description for the page"
+title: "Brick & Stone Masonry Contractor in Eastern Ontario | Tibben Masonry | Ingleside, Ontario"
+description: ""
 permalink: "/"
 tags: "sitemap" # content/content.json will make sure that all pages in content/ are marked with a "sitemap" tag, for automatic sitemap generation. As index.html is not in content/, we need to add it here to ensure the root page is included in the sitemap generation
 ---
 
-{% extends "layouts/base.html" %}
+{% extends "layouts/base.html" %} {% block head %}
+<!-- Critical styles are loaded first -->
+<link rel="stylesheet" href="/assets/css/critical.css" />
 
-{% block head %}
-    <!-- Critical styles are loaded first -->
-    <link rel="stylesheet" href="/assets/css/critical.css" />
+<!-- If we're in production, defer the rest of the home page styles. In development, always load it. Otherwise the site will break when hot-reload is used. -->
+{% if client.isProduction %}
+<link rel="preload" href="/assets/css/local.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript>
+  <link rel="stylesheet" href="/assets/css/local.css" />
+</noscript>
 
-    <!-- If we're in production, defer the rest of the home page styles. In development, always load it. Otherwise the site will break when hot-reload is used. -->
-    {% if client.isProduction %}
-        <link rel="preload" href="/assets/css/local.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript>
-            <link rel="stylesheet" href="/assets/css/local.css">
-        </noscript>
+{% else %}
+<link rel="stylesheet" href="/assets/css/local.css" />
+{% endif %}
 
-    {% else %}
-        <link rel="stylesheet" href="/assets/css/local.css" />
-    {% endif %}
+<!-- To ensure proper validation, prevent errors, and encourage developers to check, schema's are an opt-in feature. They're very bespoke and requires some customising  -->
+<!-- Uncomment the code below to enable Structured Data, and test it when you deploy to Netlify - https://developers.google.com/search/docs/appearance/structured-data -->
+{% include "components/home-schema.html" %} {% endblock %} {% block body %}
 
-    <!-- To ensure proper validation, prevent errors, and encourage developers to check, schema's are an opt-in feature. They're very bespoke and requires some customising  -->
-    <!-- Uncomment the code below to enable Structured Data, and test it when you deploy to Netlify - https://developers.google.com/search/docs/appearance/structured-data -->
-    <!-- {% include "components/home-schema.html" %} -->
-{% endblock %}
+<!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
 
-{% block body %}
+<section id="hero-227">
+  <div class="cs-container">
+    <div class="cs-flex-group">
+      <h1 class="cs-topper">Brick & Stone Masonry in Eastern Ontario</h1>
+      <span class="cs-title">Quality Masonry Work For Over 40 Years</span>
+      <p class="cs-text">Residential and commercial masonry services in South Dundas and the surrounding areas.</p>
+      <a href="/contact/" class="cs-button-solid">Request A Quote</a>
+      <a href="/#steps-2433" class="cs-button-4">View Projects</a>
+    </div>
 
-    <!-- ============================================ -->
-    <!--                    Hero                      -->
-    <!-- ============================================ -->
+    <!--Service Cards-->
+    <ul class="cs-card-group">
+      <li class="cs-item">
+        <a class="cs-link" href="/brick-veneer-installation-repair/">
+          <span class="cs-number">01</span>
+          <h2 class="cs-h2">Brick Veneer Installation & Repair</h2>
+          <p class="cs-item-text">Tibben Masonry provides full-service brick veneer installation for new residential and commercial construction projects.</p>
+        </a>
+      </li>
+      <li class="cs-item">
+        <a class="cs-link" href="">
+          <span class="cs-number">02</span>
+          <h2 class="cs-h2">Architectural Concrete Installation & Repair</h2>
+          <p class="cs-item-text">Expert installation of concrete block foundations, basement walls, architectural facades, and concrete veneer systems.</p></a
+        >
+      </li>
+      <li class="cs-item">
+        <a class="cs-link" href="/natural-stone-installation-repair/">
+          <span class="cs-number">03</span>
+          <h2 class="cs-h2">Natural Stone Facade Installation & Repair</h2>
+          <p class="cs-item-text">Professional natural stone facade and stone veneer installation for residential and commercial properties.</p>
+        </a>
+      </li>
+    </ul>
+  </div>
 
-    <section id="hero-143">
-        <div class="cs-container">
-            <span class="cs-topper">CodeStitch Presents</span>
-            <h1 class="cs-title">
-                The Intermediate Website Kit (SASS)
-            </h1>
-            <p class="cs-text">
-                Building faster websites, faster. Just clone, update _data/client.js, swap out some sections, and away you go!
-            </p>
-            <a href="/contact/" class="cs-button-solid">Get in Touch</a>
-        </div>
+  <!-- Background Image -->
+  <picture class="cs-picture">
+    <img decoding="async" src="/assets/images/hero.jpg" alt="mountains" width="2250" height="1500" aria-hidden="true" />
+  </picture>
+</section>
 
-        <!-- Background Image -->
+<!-- ============================================ -->
+<!--                 About us                     -->
+<!-- ============================================ -->
+
+<section id="sbs-1443">
+  <div class="cs-container">
+    <div class="cs-box-container">
+      <div class="cs-box"></div>
+      <div class="cs-box"></div>
+      <div class="cs-box">
+        <span class="cs-box-text">Quality</span>
+      </div>
+      <div class="cs-box">
+        <span class="cs-box-text">Trusted</span>
+      </div>
+      <div class="cs-box">
+        <span class="cs-box-text">Experts</span>
+      </div>
+      <div class="cs-box">
+        <span class="cs-box-text">Bonded</span>
+      </div>
+    </div>
+
+    <div class="cs-content">
+      <span class="cs-topper">About Us</span>
+      <h2 class="cs-title">Expert Craftsmanship You Can Rely On</h2>
+      <p class="cs-text">
+        Established in 2013, Tibben Masonry has built a strong reputation throughout South Dundas and the surrounding region. With more than four decades of hands-on experience, offering skilled
+        masonry services for commercial and residential clients.
+      </p>
+      <ul class="cs-card-group">
+        <li class="cs-li">
+          <picture class="cs-li-picture">
+            <img class="cs-li-icon" aria-hidden="true" src="/assets/svgs/experience.svg" decoding="async" alt="icon" width="32" height="32" loading="lazy" />
+          </picture>
+          <div class="cs-flex">
+            <h3 class="cs-h3">Experienced Masons</h3>
+            <p class="cs-li-text">Deep knowledge of masonry materials and local building codes, ensuring every project meets requirements.</p>
+          </div>
+        </li>
+        <li class="cs-li">
+          <picture class="cs-li-picture">
+            <img class="cs-li-icon" aria-hidden="true" src="/assets/svgs/delivery.svg" decoding="async" alt="icon" width="32" height="32" loading="lazy" />
+          </picture>
+          <div class="cs-flex">
+            <h3 class="cs-h3">On-Time Delivery</h3>
+            <p class="cs-li-text">Consistent on-time completion of masonry projects to keep your project on schedule.</p>
+          </div>
+        </li>
+        <li class="cs-li">
+          <picture class="cs-li-picture">
+            <img class="cs-li-icon" aria-hidden="true" src="/assets/svgs/certificate.svg" decoding="async" alt="icon" width="32" height="32" loading="lazy" />
+          </picture>
+          <div class="cs-flex">
+            <h3 class="cs-h3">Bonded & Insured</h3>
+            <p class="cs-li-text">Bonded and insured with appropriate coverage amounts for complete peace of mind.</p>
+          </div>
+        </li>
+      </ul>
+      <a href="/about/" class="cs-button-solid">Learn More About Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--                    Services                  -->
+<!-- ============================================ -->
+
+<section id="services-1800">
+  <div class="cs-container">
+    <div class="cs-content">
+      <div class="cs-flex">
+        <span class="cs-topper">Our Services</span>
+        <h2 class="cs-title">Masonry Services Tailored to Your Project</h2>
+        <p class="cs-text">
+          You probably searched for a masonry contractor near me, and well—you’ve found us. Whether you have a cracked foundation, new construction, chimney repair, or need an expert evaluation, we
+          have you covered. Tibben Masonry provides complete peace of mind, ensuring your project is done right and on time the first time, every time.
+        </p>
+      </div>
+
+      <a href="/contact/" class="cs-button-solid">Request A Qoute</a>
+    </div>
+    <ul class="cs-card-group">
+      <li class="cs-item">
+        <a href="" class="cs-link">
+          <h3 class="cs-h3">Fireplaces & Chimneys</h3>
+        </a>
         <picture class="cs-background">
-            <!--Mobile Image-->
-            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 640, height: 1490 }) | avif %}" type="image/avif">
-            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 640, height: 1490 }) | webp %}" type="image/webp">
-            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 640, height: 1490 }) | jpeg %}" type="image/jpeg">
-            <!--Tablet Image-->
-            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 2048, height: 1922 }) | avif %}" type="image/avif">
-            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 2048, height: 1922 }) | webp %}" type="image/webp">
-            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 2048, height: 1922 }) | jpeg %}" type="image/jpeg">
-            <!--Large Tablet Image-->
-            <source media="(min-width: 1024px) and (max-width: 1300px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 2048, height: 1922 }) | avif %}" type="image/avif">
-            <source media="(min-width: 1024px) and (max-width: 1300px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 2048, height: 1922 }) | webp %}" type="image/webp">
-            <source media="(min-width: 1024px) and (max-width: 1300px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 2048, height: 1922 }) | jpeg %}" type="image/jpeg">
-            <!--Desktop Image-->
-            <source media="(min-width: 1300px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 1, height: 1 }) | avif %}" type="image/avif">
-            <source media="(min-width: 1300px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 1, height: 1 }) | webp %}" type="image/webp">
-            <source media="(min-width: 1300px)" srcset="{% getUrl "/assets/images/landing.jpg" | resize({ width: 1, height: 1 }) | jpeg %}" type="image/jpeg">
-            <img src="{% getUrl "/assets/images/landing.jpg" | resize({ width: 1, height: 1 }) | jpeg %}" alt="kitchen" width="1" height="1" loading="eager" decoding="async">
+          <img decoding="async" loading="lazy" src="/assets/images/fireplace.jpg" alt="new build natural stone fireplace" width="413" height="320" aria-hidden="true" />
         </picture>
-    </section>
+      </li>
+      <li class="cs-item">
+        <a href="" class="cs-link">
+          <h3 class="cs-h3">Heritage Sites</h3>
+        </a>
+        <picture class="cs-background">
+          <img decoding="async" loading="lazy" src="/assets/images/heritage-fireplace.jpg" alt="A natural stone heritage fireplace" width="413" height="320" aria-hidden="true" />
+        </picture>
+      </li>
+      <li class="cs-item">
+        <a href="" class="cs-link">
+          <h3 class="cs-h3">New Construction</h3>
+        </a>
+        <picture class="cs-background">
+          <img decoding="async" loading="lazy" src="/assets/images/house.jpg" alt="Fully stoned house wall" width="413" height="320" aria-hidden="true" />
+        </picture>
+      </li>
+      <li class="cs-item">
+        <a href="" class="cs-link">
+          <h3 class="cs-h3">Patio, Sidewalks & Driveways</h3>
+        </a>
+        <picture class="cs-background">
+          <img decoding="async" loading="lazy" src="/assets/images/concrete-sidewalk.jpg" alt="muscular man flexing his muscles in a gym" width="413" height="320" aria-hidden="true" />
+        </picture>
+      </li>
+      <li class="cs-item">
+        <a target="_blank" rel="nofollow" href="https://en.wikipedia.org/wiki/Red_Seal_Program" class="cs-link">
+          <picture class="cs-background">
+            <img decoding="async" loading="lazy" src="/assets/images/red-seal.png" alt="Red seal certified masonry" width="413" height="320" aria-hidden="true" />
+          </picture>
+        </a>
+      </li>
+      <li class="cs-item">
+        <a href="" class="cs-link">
+          <h3 class="cs-h3">Foundations</h3>
+        </a>
+        <picture class="cs-background">
+          <img decoding="async" loading="lazy" src="/assets/images/block.jpg" alt="A block foundation wall." width="413" height="320" aria-hidden="true" />
+        </picture>
+      </li>
+      <li class="cs-item">
+        <a href="" class="cs-link">
+          <h3 class="cs-h3">Outdoor Living Space</h3>
+        </a>
+        <picture class="cs-background">
+          <img decoding="async" loading="lazy" src="/assets/images/outdoor-kitchen.jpg" alt="muscular man flexing his muscles in a gym" width="413" height="320" aria-hidden="true" />
+        </picture>
+      </li>
+      <li class="cs-item">
+        <a href="" class="cs-link">
+          <h3 class="cs-h3">Parging</h3>
+        </a>
+        <picture class="cs-background">
+          <img decoding="async" loading="lazy" src="/assets/images/parging.jpg" alt="portland cement smeared on a block wall" width="413" height="320" aria-hidden="true" />
+        </picture>
+      </li>
+      <li class="cs-item">
+        <a href="" class="cs-link">
+          <h3 class="cs-h3">Concrete Slabs</h3>
+        </a>
+        <picture class="cs-background">
+          <img decoding="async" loading="lazy" src="/assets/images/concrete-slab.jpg" alt="a concrete floor for a residential house" width="413" height="320" aria-hidden="true" />
+        </picture>
+      </li>
+    </ul>
+  </div>
+</section>
 
-    <!-- ============================================ -->
-    <!--                   Services                   -->
-    <!-- ============================================ -->
+<!-- ============================================ -->
+<!--                   Logos                      -->
+<!-- ============================================ -->
 
-    <section id="h-services-143">
-        <ul class="cs-card-group">
-            <li class="cs-item">
-                <picture class="cs-icon">
-                    <img loading="lazy" decoding="async" src="/assets/svgs/s1.svg" alt="icon" width="52" height="52" aria-hidden="true">
-                </picture>
-                <h2 class="cs-title">
-                    Full Kitchen Remodel
-                </h2>
-                <p class="cs-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-            </li>
-            <li class="cs-item">
-                <picture class="cs-icon">
-                    <img loading="lazy" decoding="async" src="/assets/svgs/s2.svg" alt="icon" width="52" height="52" aria-hidden="true">
-                </picture>
-                <h2 class="cs-title">
-                    Exterior Repairs
-                </h2>
-                <p class="cs-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-            </li>
-            <li class="cs-item">
-                <picture class="cs-icon">
-                    <img loading="lazy" decoding="async" src="/assets/svgs/s3.svg" alt="icon" width="52" height="52" aria-hidden="true">
-                </picture>
-                <h2 class="cs-title">
-                    Utility Maintenance
-                </h2>
-                <p class="cs-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-            </li>
-            <li class="cs-item">
-                <picture class="cs-icon">
-                    <img loading="lazy" decoding="async" src="/assets/svgs/s4.svg" alt="icon" width="52" height="52" aria-hidden="true">
-                </picture>
-                <h2 class="cs-title">
-                    Design Consultation
-                </h2>
-                <p class="cs-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-            </li>
+<section id="logos-1430">
+  <div class="cs-container">
+    <div class="cs-content">
+      <h2 class="cs-title">Materials We Specialize In</h2>
+    </div>
+
+    <div class="cs-logos">
+      <!--Ideally you want to use svg's for the file path image, which is why these aren't wrapped in picture elements for different screen sizes-->
+      <div class="cs-logo-wrapper">
+        <picture class="cs-picture">
+          <img class="cs-logo" src="/assets/svgs/block.svg" alt="logo" width="200" height="75" loading="lazy" decoding="async" />
+        </picture>
+        <span class="cs-text">block</span>
+      </div>
+      <div class="cs-logo-wrapper">
+        <picture class="cs-picture">
+          <img class="cs-logo" src="/assets/svgs/brick.svg" alt="logo" width="229" height="55" loading="lazy" decoding="async" />
+        </picture>
+        <span class="cs-text">brick</span>
+      </div>
+      <div class="cs-logo-wrapper">
+        <picture class="cs-picture">
+          <img class="cs-logo" src="/assets/svgs/paver.svg" alt="logo" width="235" height="53" loading="lazy" decoding="async" />
+        </picture>
+        <span class="cs-text">Paver</span>
+      </div>
+      <div class="cs-logo-wrapper">
+        <picture class="cs-picture">
+          <img class="cs-logo" src="/assets/svgs/concrete.svg" alt="logo" width="228" height="61" loading="lazy" decoding="async" />
+        </picture>
+        <span class="cs-text">Concrete</span>
+      </div>
+      <div class="cs-logo-wrapper">
+        <picture class="cs-picture">
+          <img class="cs-logo" src="/assets/svgs/stone.svg" alt="logo" width="228" height="61" loading="lazy" decoding="async" />
+        </picture>
+        <span class="cs-text">Stone</span>
+      </div>
+    </div>
+  </div>
+  <!-- Background Graphic -->
+  <picture class="cs-background">
+    <img src="/assets/svgs/logo-light.svg" alt="logo" />
+  </picture>
+</section>
+
+<!-- ============================================ -->
+<!--                Side By Side                  -->
+<!-- ============================================ -->
+
+<section id="RTsbs-601">
+  <picture class="cs-background">
+    <img loading="lazy" decoding="async" src="/assets/images/stone-retainer-wall.jpg" alt="" width="960" height="796" />
+  </picture>
+  <div class="cs-container">
+    <div class="cs-content">
+      <span class="cs-topper">professional Contractors</span>
+      <h2 class="cs-title">Masonry Contractors For Eastern Ontario</h2>
+      <p class="cs-text">
+        Tibben Masonry is Eastern Ontario's trusted masonry subcontractor for general contractors, developers, and homeowners. With extensive experience in residential subdivisions, commercial
+        construction, and institutional projects, we deliver code-compliant masonry installations that meet architectural specifications and exceed industry standards. Our skilled teams specialize in
+        brick veneer, stone facades, concrete block foundations, and structural masonry for multi-family developments, retail properties, schools, and custom homes throughout the Brockville, Cornwall,
+        and Kemptville regions.
+      </p>
+      <a href="/contact/" class="cs-button-solid">Start Your Project</a>
+    </div>
+  </div>
+  <div aria-hidden="true" class="cs-decoration"></div>
+</section>
+
+<!-- ============================================ -->
+<!--              Side By Side Reverse            -->
+<!-- ============================================ -->
+
+<section id="RTsbsr-601">
+  <picture class="cs-background">
+    <img loading="lazy" decoding="async" src="/assets/images/stone-veneer-house.jpg" alt="" width="960" height="796" />
+  </picture>
+  <div class="cs-container">
+    <div class="cs-content">
+      <span class="cs-topper">Stone Masonry</span>
+      <h2 class="cs-title">Natural Stone Facade & Stone Veneer Installation</h2>
+      <p class="cs-text">
+        Tibben Masonry specializes in natural stone facade installation for new residential construction homes. We carefully select each stone for color consistency, structural integrity, and
+        aesthetic harmony to get your home to be the talk of the neighborhood.
+      </p>
+
+      <h3 class="cs-h3">Stone Materials We Use:</h3>
+      <ul id="list-893" class="cs-ul">
+        <li class="cs-li">Ontario Limestone</li>
+        <li class="cs-li">Granite Stone</li>
+        <li class="cs-li">Natural Fieldstone</li>
+        <li class="cs-li">Sandstone</li>
+        <li class="cs-li">Marble</li>
+        <li class="cs-li">Slate</li>
+        <li class="cs-li">Cultured Stone (Artificial Veneer)</li>
+      </ul>
+
+      <a href="/contact/" class="cs-button-solid">Get Started</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--              Side By Side Triplet            -->
+<!-- ============================================ -->
+
+<section id="RTsbst-601">
+  <picture class="cs-background">
+    <img src="/assets/images/crumbling-brick-chimney.webp" alt="" width="960" height="796" loading="lazy" decoding="async" />
+  </picture>
+  <img class="cs-graphic" src="/assets/svgs/emergency-repair.svg" alt="emergency repair banner" width="960" height="796" loading="lazy" decoding="async" />
+  <div class="cs-container">
+    <div class="cs-content">
+      <span class="cs-topper">Emergency Repair Services</span>
+      <h2 class="cs-title">Emergency Chimney Repairs</h2>
+      <p class="cs-text">
+        When masonry emergencies strike, Tibben Masonry responds fast with urgent repair services for homeowners facing chimney collapse, leaning chimneys, crumbling brick walls, foundation cracks,
+        and water infiltration that threatens your home's safety. Our experienced team provides assessment and emergency stabilization for critical situations including falling bricks, chimney leaks,
+        spalling masonry, and structural damage caused by storms, freeze-thaw cycles, or sudden failures.
+      </p>
+      <p class="cs-text">
+        Don't wait when you notice warning signs like tilting chimneys, crumbling mortar, water stains near masonry, visible cracks widening, or bricks falling from structures. These are urgent safety
+        hazards that require professional attention. Tibben Masonry delivers solutions that address both immediate dangers and underlying structural issues.
+      </p>
+      <a href="/contact/" class="cs-button-solid">Get Help Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--                   Stats                      -->
+<!-- ============================================ -->
+
+<section id="stats-15">
+  <div class="cs-container">
+    <ul class="cs-card-group">
+      <li class="cs-item">
+        <div class="cs-flex">
+          <span class="cs-number">1000+</span>
+          <img class="cs-icon" src="/assets/svgs/happy.svg" alt="" width="40" height="40" loading="lazy" decoding="async" />
+        </div>
+        <span class="cs-header">Happy Clients</span>
+        <p class="cs-item-text">For over four decades, homeowners and contractors have trusted Tibben Masonry for quality workmanship and reliable service.</p>
+      </li>
+      <li class="cs-item">
+        <div class="cs-flex">
+          <span class="cs-number">500+</span>
+          <img class="cs-icon" src="/assets/svgs/house.svg" alt="" width="40" height="40" loading="lazy" decoding="async" />
+        </div>
+        <span class="cs-header">Completed Homes</span>
+        <p class="cs-item-text">From custom residential builds to large-scale subdivision projects, Tibben Masonry has completed hundreds of homes throughout Eastern Ontario.</p>
+      </li>
+      <li class="cs-item">
+        <div class="cs-flex">
+          <span class="cs-number">40+</span>
+          <img class="cs-icon" src="/assets/svgs/brick-trowel.svg" alt="" width="40" height="40" loading="lazy" decoding="async" />
+        </div>
+        <span class="cs-header">Years Of Experience</span>
+        <p class="cs-item-text">Four decades of hands-on masonry work have given us deep knowledge of materials, techniques, and local building codes.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--                    steps                     -->
+<!-- ============================================ -->
+
+<section id="steps-2433">
+  <div class="cs-container">
+    <div class="cs-info">
+      <span class="cs-topper">Our Work</span>
+      <h2 class="cs-title">Featured Completed Projects</h2>
+      <p class="cs-text">Expertise at every level, from residential subdivisions to high-end luxury homes, with a commitment to excellence at every level.</p>
+    </div>
+    <!-- TO add more panels, scroll to instructions after the current ending panel -->
+    <div class="cs-steps" role="tablist" aria-label="Service steps">
+      <!-- panel 1 -->
+      <input class="cs-step-toggle" id="service1-2433" type="radio" name="radio-set" aria-controls="panel1" aria-selected="false" aria-expanded="false" aria-labelledby="step1" role="tab" />
+      <div class="cs-step-panel" id="panel1-2433" aria-labelledby="step1" tabindex="0" role="tabpanel">
+        <label id="step1-2433" class="cs-tab" for="service1">01 Doran Creek Estates</label>
+        <div class="cs-item">
+          <picture class="cs-picture">
+            <img src="/assets/images/doran-creek/house-1.jpg" alt="" width="389" height="420" loading="lazy" decoding="async" />
+          </picture>
+          <div class="cs-item-content">
+            <div class="cs-item-icon" aria-hidden="true">
+              <span class="cs-icon">01</span>
+              <div class="cs-border cs-border1" aria-hidden="true"></div>
+              <div class="cs-border cs-border2" aria-hidden="true"></div>
+            </div>
+            <div class="cs-item-content-inner">
+              <h3 class="cs-h3">Doran Creek Estates</h3>
+              <p class="cs-text">
+                <span class="cs-item-text"
+                  >Located just outside Iroquois, Ontario, the Doran Creek Estates subdivision comprises more than 20 homes, each featuring stonework completed by Tibben Masonry.</span
+                >
+              </p>
+              <a class="cs-button-solid" href="/doran-creek-estates/">View Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- panel 2 -->
+      <input
+        class="cs-step-toggle"
+        id="service2-2433"
+        type="radio"
+        name="radio-set"
+        checked="checked"
+        aria-controls="panel2"
+        aria-selected="true"
+        aria-expanded="true"
+        aria-labelledby="step2"
+        role="tab"
+      />
+      <div class="cs-step-panel" id="panel2-2433" aria-labelledby="step2" tabindex="-1" role="tabpanel">
+        <label id="step2-2433" class="cs-tab" for="service2">02 Hill Island</label>
+        <div class="cs-item">
+          <picture class="cs-picture">
+            <img src="/assets/images/hill-island/stone-fireplace.jpg" alt="" width="389" height="420" loading="lazy" decoding="async" />
+          </picture>
+          <div class="cs-item-content">
+            <div class="cs-item-icon" aria-hidden="true">
+              <span class="cs-icon">02</span>
+              <div class="cs-border cs-border1" aria-hidden="true"></div>
+              <div class="cs-border cs-border2" aria-hidden="true"></div>
+            </div>
+            <div class="cs-item-content-inner">
+              <h3 class="cs-h3">Hill Island</h3>
+              <p class="cs-text">
+                <span class="cs-item-text"> A beautifully crafted custom home situated on the St. Lawrence River, just outside the Thousand Islands region. </span>
+              </p>
+              <a class="cs-button-solid" href="/hill-island/">View Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- panel 3 -->
+      <input disabled class="cs-step-toggle" id="service3-2433" type="radio" name="radio-set" aria-controls="panel3" aria-selected="false" aria-expanded="false" aria-labelledby="step3" role="tab" />
+      <div class="cs-step-panel" id="panel3-2433" aria-labelledby="step3" tabindex="-1" role="tabpanel">
+        <label id="step3-2433" class="cs-tab" for="service3">03 Coming Soon</label>
+        <div class="cs-item">
+          <picture class="cs-picture">
+            <!-- <img src="" alt="" width="389" height="420" loading="lazy" decoding="async" /> -->
+          </picture>
+          <div class="cs-item-content">
+            <div class="cs-item-icon" aria-hidden="true">
+              <span class="cs-icon">03</span>
+              <div class="cs-border cs-border1" aria-hidden="true"></div>
+              <div class="cs-border cs-border2" aria-hidden="true"></div>
+            </div>
+            <p class="cs-text">
+              <!-- <span class="cs-item-text">
+                The Japanese word irezumi means "insertion of ink" and can mean tattoos using tebori, the traditional Japanese hand method, a Western-style machine, or any method of tattooing using
+                insertion of ink.
+              </span> -->
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- panel 4 -->
+      <input disabled class="cs-step-toggle" id="service4-2433" type="radio" name="radio-set" aria-controls="panel4" aria-selected="false" aria-expanded="false" aria-labelledby="step4" role="tab" />
+      <div class="cs-step-panel" id="panel4-2433" aria-labelledby="step4" tabindex="-1" role="tabpanel">
+        <label id="step4-2433" class="cs-tab" for="service4">04 Coming Soon</label>
+        <div class="cs-item">
+          <picture class="cs-picture">
+            <!-- <img src="https://nyc3.digitaloceanspaces.com/csimages2/Images/People/tattoo-step1.jpg" alt="" width="389" height="420" loading="lazy" decoding="async" /> -->
+          </picture>
+          <div class="cs-item-content">
+            <div class="cs-item-icon" aria-hidden="true">
+              <span class="cs-icon">04</span>
+              <div class="cs-border cs-border1" aria-hidden="true"></div>
+              <div class="cs-border cs-border2" aria-hidden="true"></div>
+            </div>
+            <p class="cs-text">
+              <!-- <span class="cs-item-text">
+                In Hinduism, Buddhism, and Neopaganism, tattoos are accepted. Southeast Asia has a tradition of protective tattoos variously known as sak yant or yantra tattoos that include Buddhist
+                images, prayers, and symbols.
+              </span> -->
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- panel 5 -->
+      <input disabled class="cs-step-toggle" id="service5-2433" type="radio" name="radio-set" aria-controls="panel5" aria-selected="false" aria-expanded="false" aria-labelledby="step5" role="tab" />
+      <div class="cs-step-panel" id="panel5-2433" aria-labelledby="step5" tabindex="-1" role="tabpanel">
+        <label id="step5-2433" class="cs-tab" for="service5">05 Coming Soon</label>
+        <div class="cs-item">
+          <picture class="cs-picture">
+            <!-- <img src="https://nyc3.digitaloceanspaces.com/csimages2/Images/People/tattoo-step1.jpg" alt="" width="389" height="420" loading="lazy" decoding="async" /> -->
+          </picture>
+          <div class="cs-item-content">
+            <div class="cs-item-icon" aria-hidden="true">
+              <span class="cs-icon">05</span>
+              <div class="cs-border cs-border1" aria-hidden="true"></div>
+              <div class="cs-border cs-border2" aria-hidden="true"></div>
+            </div>
+            <p class="cs-text">
+              <!-- <span class="cs-item-text">
+                Ötzi the iceman had a total of 61 tattoos, which may have been a form of acupuncture used to relieve pain. If so, this is at least 2,000 years before acupuncture's previously known
+                earliest use in China (c. 100 BC).
+              </span> -->
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- panel [*] -->
+      <!-- 
+                INSTRUCTIONS:
+                to add a panel just use the template below and follow these 6 easy steps:
+                1) All seven instances of the "*" symbol below need to be updated to your new panel's number. I know... its a lot, this is necessary for proper accessibility and functionality. All the numbering happens within the first 3-lines of the code so no need to drill deeper. 
+                2) Update the <label> element (including the '*' if you missed it on the previous step). This is your heading and creates the tab you click on to open the panels. Keep it succinct for consistent panels.
+                3) Update the <picture> element's source_srcsset and img_src with paths to your custom resources.
+                4) Update the .cs-icon_src with the path to your custom icon.
+                5)  update the  '...' in the .cs-item-text with your custom text; Keep it succinct for consistent panels. This would be a good opportunity to offer a link to a page with more specific information.  
+                6) uncomment the code for your new panel (if you haven't already) and you are ready to go. Happy stitching!
+
+             -->
+      <!-- TEMPLATE -->
+      <!--
+            <input class="cs-step-toggle" id="service*-2433" type="radio" name="radio-set" aria-controls="panel*" aria-selected="false" aria-expanded="false" aria-labelledby="step*" role="tab">
+            <div class="cs-step-panel" id="panel*-2433" aria-labelledby="step*" tabindex="-1" role="tabpanel">
+                <label id="step*-2433" class="cs-tab" for="service*">*. Heading</label>
+                <div class="cs-item">
+                    <picture class="cs-picture">
+                        <source media="(max-width: 600px)" srcset="...">
+                        <source media="(max-width: 1023px)" srcset="...">
+                        <source media="(min-width: 1024px)" srcset="...">
+                        <img src="..." alt="" width="389" height="420" loading="lazy" decoding="async">
+                    </picture>
+                    <div class="cs-item-content">
+                        <div class="cs-item-icon" aria-hidden="true">
+                            <img class="cs-icon" loading="lazy" decoding="async" src="..." alt="" width="24" height="24">
+                            <div class="cs-border cs-border1" aria-hidden="true"></div>
+                            <div class="cs-border cs-border2" aria-hidden="true"></div>
+                        </div>
+                        <p class="cs-text">
+                            <span class="cs-item-text">
+                            ...
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            -->
+    </div>
+  </div>
+  <img class="cs-background" loading="lazy" decoding="async" src="/assets/images/brick-stack.png" alt="brick logo" width="1920" height="889" aria-hidden="true" />
+</section>
+
+<!-- ============================================ -->
+<!--                   services area              -->
+<!-- ============================================ -->
+
+<section id="service-area">
+  <div class="cs-container">
+    <div class="cs-content">
+      <span class="cs-topper">Service Area</span>
+      <h2 class="cs-title">Regions We Serve In Eastern Ontario</h2>
+      <p class="cs-text">We serve South Dundas and the Surrounding areas, willing to travel up to 1 hour away from Inglside.</p>
+    </div>
+
+    <div class="cs-map-area">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2828.225211187908!2d-75.30652169999999!3d44.85770979999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4acb4e310e41%3A0x35d623921ffd71d6!2sTibben%20Masonry!5e0!3m2!1sen!2sca!4v1765943790939!5m2!1sen!2sca"
+        class="cs-map"
+        width="600"
+        height="450"
+        allowfullscreen=""
+        title="{{ client.address.lineOne }}, {{ client.address.city }}, {{ client.address.state }} {{ client.address.zip }}"
+        loading="lazy"
+        decoding="async"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+
+      <div class="cs-map-content">
+        <h3 class="cs-h3">Service Areas Include</h3>
+        <ul class="cs-map-list">
+          <li class="cs-map-item">
+            <a class="cs-map-link" href="https://www.google.com/maps/place/Brockville,+ON/" target="_blank">
+              Brockville
+              <img class="cs-icon" src="/assets/svgs/brick-trowel-sm.svg" alt="icon" aria-hidden="true" width="32" height="32" loading="lazy" decoding="async" />
+            </a>
+          </li>
+          <li class="cs-map-item">
+            <a class="cs-map-link" href="https://www.google.com/maps/place/Cardinal,+ON/" target="_blank">
+              Cardinal
+              <img class="cs-icon" src="/assets/svgs/brick-trowel-sm.svg" alt="icon" aria-hidden="true" width="32" height="32" loading="lazy" decoding="async" />
+            </a>
+          </li>
+          <li class="cs-map-item">
+            <a class="cs-map-link" href="https://www.google.com/maps/place/Chesterville,+ON/" target="_blank">
+              Chesterville
+              <img class="cs-icon" src="/assets/svgs/brick-trowel-sm.svg" alt="icon" aria-hidden="true" width="32" height="32" loading="lazy" decoding="async" />
+            </a>
+          </li>
+          <li class="cs-map-item">
+            <a class="cs-map-link" href="https://www.google.com/maps/place/Cornwall,+ON/" target="_blank">
+              Cornwall
+              <img class="cs-icon" src="/assets/svgs/brick-trowel-sm.svg" alt="cheveron" aria-hidden="true" width="32" height="32" loading="lazy" decoding="async" />
+            </a>
+          </li>
+          <li class="cs-map-item">
+            <a class="cs-map-link" href="https://www.google.com/maps/place/Ingleside,+ON/" target="_blank">
+              Ingleside
+              <img class="cs-icon" src="/assets/svgs/brick-trowel-sm.svg" alt="icon" aria-hidden="true" width="32" height="32" loading="lazy" decoding="async" />
+            </a>
+          </li>
+          <li class="cs-map-item">
+            <a class="cs-map-link" href="https://www.google.com/maps/place/Iroquois,+ON/" target="_blank">
+              Iroquois
+              <img class="cs-icon" src="/assets/svgs/brick-trowel-sm.svg" alt="icon" aria-hidden="true" width="32" height="32" loading="lazy" decoding="async" />
+            </a>
+          </li>
+          <li class="cs-map-item">
+            <a class="cs-map-link" href="https://www.google.com/maps/place/Kemptville,+ON/" target="_blank">
+              Kemptville
+              <img class="cs-icon" src="/assets/svgs/brick-trowel-sm.svg" alt="icon" aria-hidden="true" width="32" height="32" loading="lazy" decoding="async" />
+            </a>
+          </li>
+          <li class="cs-map-item">
+            <a class="cs-map-link" href="https://www.google.com/maps/place/Long Sault,+ON/" target="_blank">
+              Long Sault
+              <img class="cs-icon" src="/assets/svgs/brick-trowel-sm.svg" alt="icon" aria-hidden="true" width="32" height="32" loading="lazy" decoding="async" />
+            </a>
+          </li>
+          <li class="cs-map-item">
+            <a class="cs-map-link" href="https://www.google.com/maps/place/Morrisburg,+ON/" target="_blank">
+              Morrisburg
+              <img class="cs-icon" src="/assets/svgs/brick-trowel-sm.svg" alt="icon" aria-hidden="true" width="32" height="32" loading="lazy" decoding="async" />
+            </a>
+          </li>
+          <li class="cs-map-item">
+            <a class="cs-map-link" href="https://www.google.com/maps/place/Prescott,+ON/" target="_blank">
+              Prescott
+              <img class="cs-icon" src="/assets/svgs/brick-trowel-sm.svg" alt="icon" aria-hidden="true" width="32" height="32" loading="lazy" decoding="async" />
+            </a>
+          </li>
+          <li class="cs-map-item">
+            <a class="cs-map-link" href="https://www.google.com/maps/place/Smith Falls,+ON/" target="_blank">
+              Smith Falls
+              <img class="cs-icon" src="/assets/svgs/brick-trowel-sm.svg" alt="icon" aria-hidden="true" width="32" height="32" loading="lazy" decoding="async" />
+            </a>
+          </li>
+          <li class="cs-map-item">
+            <a class="cs-map-link" href="https://www.google.com/maps/place/Winchester,+ON/" target="_blank">
+              Winchester
+              <img class="cs-icon" src="/assets/svgs/brick-trowel-sm.svg" alt="icon" aria-hidden="true" width="32" height="32" loading="lazy" decoding="async" />
+            </a>
+          </li>
         </ul>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ============================================ -->
-    <!--                 Side By Side                 -->
-    <!-- ============================================ -->
+<!-- ============================================ -->
+<!--                   Reviews                    -->
+<!-- ============================================ -->
 
-    <section id="RPsbs-313">
-        <div class="cs-container">
-            <!-- Left Image Section -->
-            <div class="cs-image-group">
-                <picture class="cs-picture cs-picture1">
-                    <!--Mobile Image-->
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 482, height: 536 }) | avif %}" type="image/avif">
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 482, height: 536 }) | webp %}" type="image/webp">
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 482, height: 536 }) | jpeg %}" type="image/jpeg">
-                    <!--Tablet Image-->
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 802, height: 892 }) | avif %}" type="image/avif">
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 802, height: 892 }) | webp %}" type="image/webp">
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 802, height: 892 }) | jpeg %}" type="image/jpeg">
-                    <!--Desktop Image-->
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 1044, height: 1162 }) | avif %}" type="image/avif">
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 1044, height: 1162 }) | webp %}" type="image/webp">
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 1044, height: 1162 }) | jpeg %}" type="image/jpeg">
-                    <img src="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 1044, height: 1162 }) | jpeg %}" alt="lawyers" width="522" height="581" loading="lazy" decoding="async">
-                </picture>
-                <picture class="cs-picture cs-picture2">
-                    <!--Mobile Image-->
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 366, height: 354 }) | avif %}" type="image/avif">
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 366, height: 354 }) | webp %}" type="image/webp">
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 366, height: 354 }) | jpeg %}" type="image/jpeg">
-                    <!--Tablet Image-->
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 600, height: 578 }) | avif %}" type="image/avif">
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 600, height: 578 }) | webp %}" type="image/webp">
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 600, height: 578 }) | jpeg %}" type="image/jpeg">
-                    <!--Desktop Image-->
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 780, height: 752 }) | avif %}" type="image/avif">
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 780, height: 752 }) | webp %}" type="image/webp">
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 780, height: 752 }) | jpeg %}" type="image/jpeg">
-                    <img src="{% getUrl "/assets/images/construction.jpg" | resize({ width: 780, height: 752 }) | jpeg %}" alt="gavel" width="390" height="376" loading="lazy" decoding="async">
-                </picture>
-            </div>
-            <!-- Right Content Section-->
-            <div class="cs-content">
-                <span class="cs-topper">About Us</span>
-                <h2 class="cs-title">
-                    About Stitch Law
-                </h2>
-                <p class="cs-text">
-                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
-                </p>
-                <div class="cs-quote">
-                    <span class="cs-quote-text">
-                        In consequat tincidunt turpis sit amet imperdiet. Praesent Classei consequat tincidunt turpis sit amet imperdiet for mind.
-                    </span>
-                    <span class="cs-name">Justin Time</span>
-                    <span class="cs-job">CEO-Founder</span>
-                    <img class="cs-quote-icon" loading="lazy" decoding="async" src="/assets/svgs/quote.svg" alt="gavel" width="136" height="77">
-                </div>
-                <a href="/about/" class="cs-button-solid">About Us</a>
-            </div>
+<section id="reviews-2247">
+  <div class="cs-container">
+    <div class="cs-card">
+      <picture class="cs-picture">
+        <img class="cs-image" loading="lazy" decoding="async" src="/assets/images/review.png" alt="profile picture" width="120" height="120" />
+      </picture>
+
+      <div class="cs-wrapper">
+        <img class="cs-quote" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/quote.svg" alt="quote" width="48" height="40" />
+        <p class="cs-item-text">
+          Tibben Masonry did a fantastic job on my heritage stone home. Greg (the owner) took the time to walk me through the project, gave me an accurate estimate, and completed the work with zero
+          hassle. I’m so excited my home looks even better than the brochure.
+        </p>
+
+        <div class="cs-name-wrapper">
+          <span class="cs-name">Sarah M.</span>
+          <span class="cs-desc">home owner</span>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ============================================ -->
-    <!--             Side By Side Reverse             -->
-    <!-- ============================================ -->
+{% include 'sections/cta.html' %}
 
-    <section id="RPsbsr-313">
-        <div class="cs-container">
-            <!-- Left Image Section -->
-            <div class="cs-image-group">
-                <picture class="cs-picture cs-picture1">
-                    <!--Mobile Image-->
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 482, height: 536 }) | avif %}" type="image/avif">
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 482, height: 536 }) | webp %}" type="image/webp">
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 482, height: 536 }) | jpeg %}" type="image/jpeg">
-                    <!--Tablet Image-->
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 802, height: 892 }) | avif %}" type="image/avif">
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 802, height: 892 }) | webp %}" type="image/webp">
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 802, height: 892 }) | jpeg %}" type="image/jpeg">
-                    <!--Desktop Image-->
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 1044, height: 1162 }) | avif %}" type="image/avif">
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 1044, height: 1162 }) | webp %}" type="image/webp">
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 1044, height: 1162 }) | jpeg %}" type="image/jpeg">
-                    <img src="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 1044, height: 1162 }) | jpeg %}" alt="lawyers" width="522" height="581" loading="lazy" decoding="async">
-                </picture>
-                <picture class="cs-picture cs-picture2">
-                    <!--Mobile Image-->
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 366, height: 354 }) | avif %}" type="image/avif">
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 366, height: 354 }) | webp %}" type="image/webp">
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 366, height: 354 }) | jpeg %}" type="image/jpeg">
-                    <!--Tablet Image-->
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 600, height: 578 }) | avif %}" type="image/avif">
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 600, height: 578 }) | webp %}" type="image/webp">
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 600, height: 578 }) | jpeg %}" type="image/jpeg">
-                    <!--Desktop Image-->
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 780, height: 752 }) | avif %}" type="image/avif">
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 780, height: 752 }) | webp %}" type="image/webp">
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 780, height: 752 }) | jpeg %}" type="image/jpeg">
-                    <img src="{% getUrl "/assets/images/construction.jpg" | resize({ width: 780, height: 752 }) | jpeg %}" alt="gavel" width="390" height="376" loading="lazy" decoding="async">
-                </picture>
-            </div>
-            <!-- Right Content Section-->
-            <div class="cs-content">
-                <span class="cs-topper">About Us</span>
-                <h2 class="cs-title">
-                    About Stitch Law
-                </h2>
-                <p class="cs-text">
-                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
-                </p>
-                <p class="cs-text">
-                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
-                </p>
-                <p class="cs-text">
-                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
-                </p>
-                <a href="/about/" class="cs-button-solid">About Us</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================ -->
-    <!--                   Gallery                    -->
-    <!-- ============================================ -->
-
-    <section id="gallery-48">
-        <div class="cs-container">
-            <div class="cs-content">
-                <span class="cs-topper">Our Portfolio</span>
-                <h2 class="cs-title">
-                    Et orci volutpat, back up generator installations
-                </h2>
-            </div>
-            <div class="cs-image-group">
-                <div class="cs-row cs-row-1">
-                    <!-- Row 1-->
-                    <picture class="cs-picture cs-picture-1">
-                        <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port1.jpg" | resize({ width: 182, height: 250 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port1.jpg" | resize({ width: 182, height: 250 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port1.jpg" | resize({ width: 182, height: 250 }) | jpeg %}" type="image/jpeg">
-                        <!--Tablet Image-->
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port1.jpg" | resize({ width: 634, height: 798 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port1.jpg" | resize({ width: 634, height: 798 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port1.jpg" | resize({ width: 634, height: 798 }) | jpeg %}" type="image/jpeg">
-                        <!--Desktop Image-->
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port1.jpg" | resize({ width: 826, height: 1134 }) | avif %}" type="image/avif">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port1.jpg" | resize({ width: 826, height: 1134 }) | webp %}" type="image/webp">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port1.jpg" | resize({ width: 826, height: 1134 }) | jpeg %}" type="image/jpeg">
-                        <img src="{% getUrl "/assets/images/portfolio/port1.jpg" | resize({ width: 826, height: 1134 }) | jpeg %}" alt="new hallway" width="413" height="567" loading="lazy" decoding="async">
-                    </picture>
-                    <picture class="cs-picture cs-picture-2">
-                        <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port4.jpg" | resize({ width: 182, height: 276 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port4.jpg" | resize({ width: 182, height: 276 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port4.jpg" | resize({ width: 182, height: 276 }) | jpeg %}" type="image/jpeg">
-                        <!--Tablet Image-->
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port4.jpg" | resize({ width: 634, height: 886 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port4.jpg" | resize({ width: 634, height: 886 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port4.jpg" | resize({ width: 634, height: 886 }) | jpeg %}" type="image/jpeg">
-                        <!--Desktop Image-->
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port4.jpg" | resize({ width: 826, height: 1258 }) | avif %}" type="image/avif">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port4.jpg" | resize({ width: 826, height: 1258 }) | webp %}" type="image/webp">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port4.jpg" | resize({ width: 826, height: 1258 }) | jpeg %}" type="image/jpeg">
-                        <img src="{% getUrl "/assets/images/portfolio/port4.jpg" | resize({ width: 826, height: 1258 }) | jpeg %}" alt="new home construction" width="413" height="629" loading="lazy" decoding="async">
-                    </picture>
-                    <picture class="cs-picture cs-picture-3">
-                        <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port7.jpg" | resize({ width: 182, height: 226 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port7.jpg" | resize({ width: 182, height: 226 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port7.jpg" | resize({ width: 182, height: 226 }) | jpeg %}" type="image/jpeg">
-                        <!--Tablet Image-->
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port7.jpg" | resize({ width: 634, height: 720 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port7.jpg" | resize({ width: 634, height: 720 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port7.jpg" | resize({ width: 634, height: 720 }) | jpeg %}" type="image/jpeg">
-                        <!--Desktop Image-->
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port7.jpg" | resize({ width: 826, height: 1024 }) | avif %}" type="image/avif">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port7.jpg" | resize({ width: 826, height: 1024 }) | webp %}" type="image/webp">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port7.jpg" | resize({ width: 826, height: 1024 }) | jpeg %}" type="image/jpeg">
-                        <img src="{% getUrl "/assets/images/portfolio/port7.jpg" | resize({ width: 826, height: 1024 }) | jpeg %}" alt="building a new wall" width="413" height="512" loading="lazy" decoding="async">
-                    </picture>
-                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
-                </div>
-                <!-- Row 2 -->
-                <div class="cs-row cs-row-2">
-                    <picture class="cs-picture cs-picture-1">
-                        <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port2.jpg" | resize({ width: 182, height: 216 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port2.jpg" | resize({ width: 182, height: 216 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port2.jpg" | resize({ width: 182, height: 216 }) | jpeg %}" type="image/jpeg">
-                        <!--Tablet Image-->
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port2.jpg" | resize({ width: 634, height: 692 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port2.jpg" | resize({ width: 634, height: 692 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port2.jpg" | resize({ width: 634, height: 692 }) | jpeg %}" type="image/jpeg">
-                        <!--Desktop Image-->
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port2.jpg" | resize({ width: 826, height: 984 }) | avif %}" type="image/avif">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port2.jpg" | resize({ width: 826, height: 984 }) | webp %}" type="image/webp">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port2.jpg" | resize({ width: 826, height: 984 }) | jpeg %}" type="image/jpeg">
-                        <img src="{% getUrl "/assets/images/portfolio/port2.jpg" | resize({ width: 826, height: 984 }) | jpeg %}" alt="new kitchen" width="413" height="492" loading="lazy" decoding="async">
-                    </picture>
-                    <picture class="cs-picture cs-picture-2">
-                        <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port5.jpg" | resize({ width: 182, height: 228 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port5.jpg" | resize({ width: 182, height: 228 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port5.jpg" | resize({ width: 182, height: 228 }) | jpeg %}" type="image/jpeg">
-                        <!--Tablet Image-->
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port5.jpg" | resize({ width: 634, height: 728 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port5.jpg" | resize({ width: 634, height: 728 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port5.jpg" | resize({ width: 634, height: 728 }) | jpeg %}" type="image/jpeg">
-                        <!--Desktop Image-->
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port5.jpg" | resize({ width: 826, height: 1034 }) | avif %}" type="image/avif">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port5.jpg" | resize({ width: 826, height: 1034 }) | webp %}" type="image/webp">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port5.jpg" | resize({ width: 826, height: 1034 }) | jpeg %}" type="image/jpeg">
-                        <img src="{% getUrl "/assets/images/portfolio/port5.jpg" | resize({ width: 826, height: 1034 }) | jpeg %}" alt="apartment addition" width="413" height="517" loading="lazy" decoding="async">
-                    </picture>
-
-                    <picture class="cs-picture cs-picture-3">
-                        <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port8.jpg" | resize({ width: 182, height: 276 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port8.jpg" | resize({ width: 182, height: 276 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port8.jpg" | resize({ width: 182, height: 276 }) | jpeg %}" type="image/jpeg">
-                        <!--Tablet Image-->
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port8.jpg" | resize({ width: 634, height: 886 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port8.jpg" | resize({ width: 634, height: 886 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port8.jpg" | resize({ width: 634, height: 886 }) | jpeg %}" type="image/jpeg">
-                        <!--Desktop Image-->
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port8.jpg" | resize({ width: 826, height: 1258 }) | avif %}" type="image/avif">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port8.jpg" | resize({ width: 826, height: 1258 }) | webp %}" type="image/webp">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port8.jpg" | resize({ width: 826, height: 1258 }) | jpeg %}" type="image/jpeg">
-                        <img src="{% getUrl "/assets/images/portfolio/port8.jpg" | resize({ width: 826, height: 1258 }) | jpeg %}" alt="kew kitchen cabinets" width="413" height="629" loading="lazy" decoding="async">
-                    </picture>
-
-                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
-                </div>
-                <!-- Row 3 -->
-                <div class="cs-row cs-row-3">
-                    <picture class="cs-picture cs-picture-1">
-                        <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port3.jpg" | resize({ width: 182, height: 276 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port3.jpg" | resize({ width: 182, height: 276 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port3.jpg" | resize({ width: 182, height: 276 }) | jpeg %}" type="image/jpeg">
-                        <!--Tablet Image-->
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port3.jpg" | resize({ width: 634, height: 880 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port3.jpg" | resize({ width: 634, height: 880 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port3.jpg" | resize({ width: 634, height: 880 }) | jpeg %}" type="image/jpeg">
-                        <!--Desktop Image-->
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port3.jpg" | resize({ width: 826, height: 1250 }) | avif %}" type="image/avif">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port3.jpg" | resize({ width: 826, height: 1250 }) | webp %}" type="image/webp">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port3.jpg" | resize({ width: 826, height: 1250 }) | jpeg %}" type="image/jpeg">
-                        <img src="{% getUrl "/assets/images/portfolio/port3.jpg" | resize({ width: 826, height: 1250 }) | jpeg %}" alt="new black window structure" width="413" height="625" loading="lazy" decoding="async">
-                    </picture>
-                    <picture class="cs-picture cs-picture-2">
-                        <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port6.jpg" | resize({ width: 182, height: 198 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port6.jpg" | resize({ width: 182, height: 198 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port6.jpg" | resize({ width: 182, height: 198 }) | jpeg %}" type="image/jpeg">
-                        <!--Tablet Image-->
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port6.jpg" | resize({ width: 634, height: 636 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port6.jpg" | resize({ width: 634, height: 636 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port6.jpg" | resize({ width: 634, height: 636 }) | jpeg %}" type="image/jpeg">
-                        <!--Desktop Image-->
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port6.jpg" | resize({ width: 826, height: 904 }) | avif %}" type="image/avif">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port6.jpg" | resize({ width: 826, height: 904 }) | webp %}" type="image/webp">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port6.jpg" | resize({ width: 826, height: 904 }) | jpeg %}" type="image/jpeg">
-                        <img src="{% getUrl "/assets/images/portfolio/port6.jpg" | resize({ width: 826, height: 904 }) | jpeg %}" alt="kitchen rebovation" width="413" height="452" loading="lazy" decoding="async">
-                    </picture>
-
-                    <picture class="cs-picture cs-picture-3">
-                        <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port9.jpg" | resize({ width: 182, height: 276 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port9.jpg" | resize({ width: 182, height: 276 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/port9.jpg" | resize({ width: 182, height: 276 }) | jpeg %}" type="image/jpeg">
-                        <!--Tablet Image-->
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port9.jpg" | resize({ width: 634, height: 886 }) | avif %}" type="image/avif">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port9.jpg" | resize({ width: 634, height: 886 }) | webp %}" type="image/webp">
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port9.jpg" | resize({ width: 634, height: 886 }) | jpeg %}" type="image/jpeg">
-                        <!--Desktop Image-->
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port9.jpg" | resize({ width: 826, height: 1258 }) | avif %}" type="image/avif">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port9.jpg" | resize({ width: 826, height: 1258 }) | webp %}" type="image/webp">
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/port9.jpg" | resize({ width: 826, height: 1258 }) | jpeg %}" type="image/jpeg">
-                        <img src="{% getUrl "/assets/images/portfolio/port9.jpg" | resize({ width: 826, height: 1258 }) | jpeg %}" alt="bathroom renovation" width="413" height="629" loading="lazy" decoding="async">
-                    </picture>
-
-                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
-                </div>
-            </div>
-            <a href="/project-one/" class="cs-button-solid">View a Project</a>
-        </div>
-    </section>
-
-    <!-- ============================================ -->
-    <!--                   Reviews                    -->
-    <!-- ============================================ -->
-
-    <section id="reviews-67">
-        <div class="cs-container">
-            <div class="cs-content">
-                <span class="cs-topper">Our Reviews</span>
-                <h2 class="cs-title">
-                    Words From Our Customers
-                </h2>
-                <p class="cs-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit dolor volutpat porttitor sagittis nunc nisl. Sagittis sit pellentesque gravida viverra. Leo ut sed euismod tortor risus et. Ornare non neque, leo, ornare. Lorem ipsum dolor sit amet.
-                </p>
-            </div>
-            <ul class="cs-card-group">
-                <!-- Review 1 -->
-                <li class="cs-item">
-                    <img class="cs-item-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/profile.svg" alt="profile picture" width="80" height="80">
-                    <p class="cs-item-text">
-                        Dictum dolor, nullam morbi sem in auctor proin. Consequat dolor habitasse nam sed tempor. Viverra magna pharetra rhoncus, nec sed ullamcorper lectus et. Auctor velit diam fermentum consequat. Feugiat viverra massa urna, volutpat orci imperdiet eget eget. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, debitis!
-                    </p>
-                    <div class="cs-info">
-                        <div class="cs-flex-group">
-                            <span class="cs-name">Jon Doe</span>
-                            <span class="cs-desc">Homeowner</span>
-                        </div>
-                        <img class="cs-item-stars" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars.svg" alt="stars" width="96" height="16">
-                    </div>
-                </li>
-                <!-- Review 2 -->
-                <li class="cs-item">
-                    <img class="cs-item-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/profile.svg" alt="profile picture" width="80" height="80">
-                    <p class="cs-item-text">
-                        Dictum dolor, nullam morbi sem in auctor proin. Consequat dolor habitasse nam sed tempor. Viverra magna pharetra rhoncus, nec sed ullamcorper lectus et. Auctor velit diam fermentum consequat. Feugiat viverra massa urna, volutpat orci imperdiet eget eget.
-                    </p>
-                    <div class="cs-info">
-                        <div class="cs-flex-group">
-                            <span class="cs-name">Jon Doe</span>
-                            <span class="cs-desc">Homeowner</span>
-                        </div>
-                        <img class="cs-item-stars" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars.svg" alt="stars" width="96" height="16">
-                    </div>
-                </li>
-            </ul>
-            <a href="/reviews/" class="cs-button-solid">Read All Reviews</a>
-        </div>
-    </section>
-
-    {% include 'sections/cta.html' %}
+<script src="/assets/js/accordion.js"></script>
 {% endblock %}
