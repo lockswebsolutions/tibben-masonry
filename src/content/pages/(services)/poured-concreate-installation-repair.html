@@ -1,0 +1,36 @@
+---
+title: "Poured Concreate Installation & Repair In Eastern Ontario | Tibben Masonry"
+description: "Professional poured concreate installation and repair for residential & commercial properties in South Dundas, Cornwall, Brockville. Bonded & insured."
+permalink: "/poured-concreate-installation-repair/"
+---
+
+{% extends "layouts/base.html" %} {% block head %} <link rel="preload" as="image" href="{% getUrl "/assets/images/banner.jpeg" | resize({ width: 640, height: 618 }) | webp %}" />
+<link rel="stylesheet" href="/assets/css/interior.css" />
+{% endblock %} {% block body %} {% from "sections/banner.html" import banner %} {{ banner( title="Poured Concreate", url=page.url )}}
+
+<section id="content-page-713">
+  <div class="cs-container">
+    <div class="cs-content">
+      <h1 class="cs-title">Professional Poured Concreate Installation and Repair</h1>
+    </div>
+    <div class="cs-image-group">
+      <picture class="cs-picture">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/solider-corse.jpg" | resize({ width: 1, height: 1 }) | avif %}" type="image/avif"> <source media="(max-width: 600px)"
+        srcset="{% getUrl "/assets/images/solider-corse.jpg" | resize({ width: 1, height: 1 }) | webp %}" type="image/webp">
+        <!--Tablet Image-->
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/solider-corse.jpg" | resize({ width: 666, height: 800 }) | avif %}" type="image/avif"> <source media="(max-width: 1024px)"
+        srcset="{% getUrl "/assets/images/solider-corse.jpg" | resize({ width: 666, height: 800 }) | webp %}" type="image/webp">
+        <!--Desktop Image-->
+        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/solider-corse.jpg" | resize({ width: 1036, height: 1246 }) | avif %}" type="image/avif"> <source media="(min-width:
+        1024px)" srcset="{% getUrl "/assets/images/solider-corse.jpg" | resize({ width: 1036, height: 1246 }) | webp %}" type="image/webp">
+        <!--Image-->
+        <img src="{% getUrl "/assets/images/solider-corse.jpg" | resize({ width: 1036, height: 1246 }) | jpeg %}" alt="stone veneer solider corse around a oval window in South Dundas" width="518"
+        height="623" loading="lazy" decoding="async" >
+      </picture>
+    </div>
+  </div>
+  <!--Waves Graphic-->
+  <picture class="cs-background"></picture>
+</section>
+{% include "sections/cta.html" %} {% endblock %}

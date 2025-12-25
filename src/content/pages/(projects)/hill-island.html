@@ -5,7 +5,8 @@ permalink: "/hill-island/"
 ---
 
 {% extends "layouts/base.html" %} {% block head %}
-
+<!-- banner -->
+<link rel="preload" as="image" href="{% getUrl "/assets/images/banner.jpeg" | resize({ width: 640, height: 618 }) | webp %}" />
 <link rel="stylesheet" href="/assets/css/projects.css" />
 {% endblock %} {% block body %} {% from "sections/banner.html" import banner %} {{ banner( title="Hill Island", url=page.url )}}
 
@@ -24,39 +25,143 @@ permalink: "/hill-island/"
       <div class="cs-row cs-row-1">
         <!-- Row 1-->
         <picture class="cs-picture cs-picture-1">
-          <img loading="lazy" decoding="async" src="/assets/images/hill-island/garage.jpg" alt="new hallway" width="420" height="567" />
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hill-island/garage.jpg" | resize({ width: 576, height: 284 }) | avif %}" type="image/avif"> <source media="(max-width:
+          600px)" srcset="{% getUrl "/assets/images/hill-island/garage.jpg" | resize({ width: 576, height: 284 }) | webp %}" type="image/webp">
+          <!--Tablet Image-->
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/hill-island/garage.jpg" | resize({ width: 634, height: 908 }) | avif %}" type="image/avif">
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/hill-island/garage.jpg" | resize({ width: 634, height: 908 }) | webp %}" type="image/webp">
+          <!--Desktop Image-->
+          <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/hill-island/garage.jpg" | resize({ width: 826, height: 1134 }) | avif %}" type="image/avif"> <source media="(min-width:
+          1025px)" srcset="{% getUrl "/assets/images/hill-island/garage.jpg" | resize({ width: 826, height: 1134 }) | webp %}" type="image/webp">
+          <!--Image-->
+          <img src="{% getUrl "/assets/images/hill-island/garage.jpg" | resize({ width: 826, height: 1134 }) | jpeg %}" alt="natural stone facade on a garage door" width="413" height="567"
+          loading="lazy" decoding="async">
         </picture>
+
         <picture class="cs-picture cs-picture-2">
-          <img loading="lazy" decoding="async" src="/assets/images/hill-island/stone-fireplace.jpg" alt="new home construction" width="420" height="630" />
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hill-island/stone-fireplace.jpg" | resize({ width: 576, height: 314 }) | avif %}" type="image/avif"> <source
+          media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hill-island/stone-fireplace.jpg" | resize({ width: 576, height: 314 }) | webp %}" type="image/webp">
+          <!--Tablet Image-->
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/hill-island/stone-fireplace.jpg" | resize({ width: 634, height: 1006 }) | avif %}"
+          type="image/avif"> <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/hill-island/stone-fireplace.jpg" | resize({ width: 634, height: 1006 }) | webp
+          %}" type="image/webp">
+          <!--Desktop Image-->
+          <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/hill-island/stone-fireplace.jpg" | resize({ width: 826, height: 1258 }) | avif %}" type="image/avif"> <source
+          media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/hill-island/stone-fireplace.jpg" | resize({ width: 826, height: 1258 }) | webp %}" type="image/webp">
+          <!--Image-->
+          <img src="{% getUrl "/assets/images/hill-island/stone-fireplace.jpg" | resize({ width: 826, height: 1258 }) | jpeg %}" alt="natural stone fireplace at Hill Island" width="413" height="629"
+          loading="lazy" decoding="async">
         </picture>
+
         <picture class="cs-picture cs-picture-3">
-          <img loading="lazy" decoding="async" src="/assets/images/hill-island/stone-retainer-wall-2.jpg" alt="building a new wall" width="420" height="512" />
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hill-island/stone-retainer-wall-2.jpg" | resize({ width: 576, height: 256 }) | avif %}" type="image/avif"> <source
+          media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hill-island/stone-retainer-wall-2.jpg" | resize({ width: 576, height: 256 }) | webp %}" type="image/webp">
+          <!--Tablet Image-->
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/hill-island/stone-retainer-wall-2.jpg" | resize({ width: 634, height: 820 }) | avif %}"
+          type="image/avif"> <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/hill-island/stone-retainer-wall-2.jpg" | resize({ width: 634, height: 820 }) |
+          webp %}" type="image/webp">
+          <!--Desktop Image-->
+          <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/hill-island/stone-retainer-wall-2.jpg" | resize({ width: 826, height: 1024 }) | avif %}" type="image/avif"> <source
+          media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/hill-island/stone-retainer-wall-2.jpg" | resize({ width: 826, height: 1024 }) | webp %}" type="image/webp">
+          <!--Image-->
+          <img src="{% getUrl "/assets/images/hill-island/stone-retainer-wall-2.jpg" | resize({ width: 826, height: 1024 }) | jpeg %}" alt="natural stone retainer wall at Hill Island" width="413"
+          height="512" loading="lazy" decoding="async">
         </picture>
-        <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
       </div>
       <!-- Row 2 -->
       <div class="cs-row cs-row-2">
         <picture class="cs-picture cs-picture-1">
-          <img loading="lazy" decoding="async" src="/assets/images/hill-island/stone-retainer-wall.jpg" alt="new kitchen" width="420" height="492" />
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hill-island/stone-retainer-wall.jpg" | resize({ width: 576, height: 246 }) | avif %}" type="image/avif"> <source
+          media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hill-island/stone-retainer-wall.jpg" | resize({ width: 576, height: 246 }) | webp %}" type="image/webp">
+          <!--Tablet Image-->
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/hill-island/stone-retainer-wall.jpg" | resize({ width: 634, height: 788 }) | avif %}"
+          type="image/avif"> <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/hill-island/stone-retainer-wall.jpg" | resize({ width: 634, height: 788 }) |
+          webp %}" type="image/webp">
+          <!--Desktop Image-->
+          <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/hill-island/stone-retainer-wall.jpg" | resize({ width: 826, height: 984 }) | avif %}" type="image/avif"> <source
+          media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/hill-island/stone-retainer-wall.jpg" | resize({ width: 826, height: 984 }) | webp %}" type="image/webp"> <img src="{% getUrl
+          "/assets/images/hill-island/stone-retainer-wall.jpg" | resize({ width: 826, height: 984 }) | jpeg %}" alt="natural stone retainer wall" width="413" height="492" loading="lazy"
+          decoding="async">
         </picture>
+
         <picture class="cs-picture cs-picture-2">
-          <img loading="lazy" decoding="async" src="/assets/images/hill-island/stone-wall.jpg" alt="apartment addition" width="420" height="517" />
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hill-island/stone-wall.jpg" | resize({ width: 576, height: 258 }) | avif %}" type="image/avif"> <source
+          media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hill-island/stone-wall.jpg" | resize({ width: 576, height: 258 }) | webp %}" type="image/webp">
+          <!--Tablet Image-->
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/hill-island/stone-wall.jpg" | resize({ width: 634, height: 828 }) | avif %}" type="image/avif">
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/hill-island/stone-wall.jpg" | resize({ width: 634, height: 828 }) | webp %}" type="image/webp">
+          <!--Desktop Image-->
+          <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/hill-island/stone-wall.jpg" | resize({ width: 826, height: 1034 }) | avif %}" type="image/avif"> <source
+          media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/hill-island/stone-wall.jpg" | resize({ width: 826, height: 1034 }) | webp %}" type="image/webp"> <img src="{% getUrl
+          "/assets/images/hill-island/stone-wall.jpg" | resize({ width: 826, height: 1034 }) | jpeg %}" alt="natural stone accent wall" width="413" height="517" loading="lazy" decoding="async">
         </picture>
+
         <picture class="cs-picture cs-picture-3">
-          <img loading="lazy" decoding="async" src="/assets/images/hill-island/fireplace.jpg" alt="kew kitchen cabinets" width="420" height="629" />
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hill-island/fireplace.jpg" | resize({ width: 576, height: 314 }) | avif %}" type="image/avif"> <source media="(max-width:
+          600px)" srcset="{% getUrl "/assets/images/hill-island/fireplace.jpg" | resize({ width: 576, height: 314 }) | webp %}" type="image/webp">
+          <!--Tablet Image-->
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/hill-island/fireplace.jpg" | resize({ width: 634, height: 1006 }) | avif %}" type="image/avif">
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/hill-island/fireplace.jpg" | resize({ width: 634, height: 1006 }) | webp %}" type="image/webp">
+          <!--Desktop Image-->
+          <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/hill-island/fireplace.jpg" | resize({ width: 826, height: 1258 }) | avif %}" type="image/avif"> <source
+          media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/hill-island/fireplace.jpg" | resize({ width: 826, height: 1258 }) | webp %}" type="image/webp">
+          <!--Image-->
+          <img src="{% getUrl "/assets/images/hill-island/fireplace.jpg" | resize({ width: 826, height: 1258 }) | jpeg %}" alt="natural stone fireplace" width="413" height="629" loading="lazy"
+          decoding="async">
         </picture>
-        <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
       </div>
       <!-- Row 3 -->
       <div class="cs-row cs-row-3">
         <picture class="cs-picture cs-picture-1">
-          <img loading="lazy" decoding="async" src="/assets/images/hill-island/stone-fireplace.jpg" alt="new home construction" width="420" height="630" />
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hill-island/stone-retainer-wall.jpg" | resize({ width: 576, height: 246 }) | avif %}" type="image/avif"> <source
+          media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hill-island/stone-retainer-wall.jpg" | resize({ width: 576, height: 246 }) | webp %}" type="image/webp">
+          <!--Tablet Image-->
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/hill-island/stone-retainer-wall.jpg" | resize({ width: 634, height: 788 }) | avif %}"
+          type="image/avif"> <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/hill-island/stone-retainer-wall.jpg" | resize({ width: 634, height: 788 }) |
+          webp %}" type="image/webp">
+          <!--Desktop Image-->
+          <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/hill-island/stone-retainer-wall.jpg" | resize({ width: 826, height: 984 }) | avif %}" type="image/avif"> <source
+          media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/hill-island/stone-retainer-wall.jpg" | resize({ width: 826, height: 984 }) | webp %}" type="image/webp"> <img src="{% getUrl
+          "/assets/images/hill-island/stone-retainer-wall.jpg" | resize({ width: 826, height: 984 }) | jpeg %}" alt="natural stone retainer wall" width="413" height="492" loading="lazy"
+          decoding="async">
         </picture>
+
         <picture class="cs-picture cs-picture-2">
-          <img loading="lazy" decoding="async" src="/assets/images/hill-island/stone-retainer-wall-2.jpg" alt="building a new wall" width="420" height="512" />
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hill-island/stone-retainer-wall-2.jpg" | resize({ width: 576, height: 256 }) | avif %}" type="image/avif"> <source
+          media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hill-island/stone-retainer-wall-2.jpg" | resize({ width: 576, height: 256 }) | webp %}" type="image/webp">
+          <!--Tablet Image-->
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/hill-island/stone-retainer-wall-2.jpg" | resize({ width: 634, height: 820 }) | avif %}"
+          type="image/avif"> <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/hill-island/stone-retainer-wall-2.jpg" | resize({ width: 634, height: 820 }) |
+          webp %}" type="image/webp">
+          <!--Desktop Image-->
+          <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/hill-island/stone-retainer-wall-2.jpg" | resize({ width: 826, height: 1024 }) | avif %}" type="image/avif"> <source
+          media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/hill-island/stone-retainer-wall-2.jpg" | resize({ width: 826, height: 1024 }) | webp %}" type="image/webp">
+          <!--Image-->
+          <img src="{% getUrl "/assets/images/hill-island/stone-retainer-wall-2.jpg" | resize({ width: 826, height: 1024 }) | jpeg %}" alt="natural stone retainer wall at Hill Island" width="413"
+          height="512" loading="lazy" decoding="async">
         </picture>
+
         <picture class="cs-picture cs-picture-3">
-          <img loading="lazy" decoding="async" src="/assets/images/hill-island/garage.jpg" alt="new hallway" width="420" height="567" />
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hill-island/garage.jpg" | resize({ width: 576, height: 284 }) | avif %}" type="image/avif"> <source media="(max-width:
+          600px)" srcset="{% getUrl "/assets/images/hill-island/garage.jpg" | resize({ width: 576, height: 284 }) | webp %}" type="image/webp">
+          <!--Tablet Image-->
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/hill-island/garage.jpg" | resize({ width: 634, height: 908 }) | avif %}" type="image/avif">
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/hill-island/garage.jpg" | resize({ width: 634, height: 908 }) | webp %}" type="image/webp">
+          <!--Desktop Image-->
+          <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/hill-island/garage.jpg" | resize({ width: 826, height: 1134 }) | avif %}" type="image/avif"> <source media="(min-width:
+          1025px)" srcset="{% getUrl "/assets/images/hill-island/garage.jpg" | resize({ width: 826, height: 1134 }) | webp %}" type="image/webp">
+          <!--Image-->
+          <img src="{% getUrl "/assets/images/hill-island/garage.jpg" | resize({ width: 826, height: 1134 }) | jpeg %}" alt="natural stone facade on a garage door" width="413" height="567"
+          loading="lazy" decoding="async">
         </picture>
         <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
       </div>

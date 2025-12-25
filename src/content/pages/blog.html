@@ -4,7 +4,8 @@ description: ""
 permalink: "/blog/"
 ---
 
-{% extends "layouts/base.html" %} {% block head %}
+{% extends "layouts/base.html" %} {% block head %} <link rel="preload" as="image" href="{% getUrl "/assets/images/banner.jpeg" | resize({ width: 640, height: 618 }) | webp %}" />
+<!--image-->
 <link rel="stylesheet" href="/assets/css/blog.css" />
 {% endblock %} {% block body %} {% from "sections/banner.html" import banner %} {{ banner( title="Blog", url=page.url )}}
 

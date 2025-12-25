@@ -7,6 +7,7 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 
 {% extends "layouts/base.html" %} {% block head %}
 <!-- Critical styles are loaded first -->
+<link rel="preload" as="image" href="{% getUrl "/assets/images/hero.jpg" | resize({ width: 640, height: 1400 }) | avif %}" />
 <link rel="stylesheet" href="/assets/css/critical.css" />
 
 <!-- If we're in production, defer the rest of the home page styles. In development, always load it. Otherwise the site will break when hot-reload is used. -->
@@ -41,9 +42,9 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
     <!--Service Cards-->
     <ul class="cs-card-group">
       <li class="cs-item">
-        <a class="cs-link" href="/brick-veneer-installation-repair/">
+        <a class="cs-link" href="/brickwork-installation-repair/">
           <span class="cs-number">01</span>
-          <h2 class="cs-h2">Brick Veneer Installation & Repair</h2>
+          <h2 class="cs-h2">Brickwork Installation & Repair</h2>
           <p class="cs-item-text">Tibben Masonry provides full-service brick veneer installation for new residential and commercial construction projects.</p>
         </a>
       </li>
@@ -51,7 +52,7 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
         <a class="cs-link" href="">
           <span class="cs-number">02</span>
           <h2 class="cs-h2">Architectural Concrete Installation & Repair</h2>
-          <p class="cs-item-text">Expert installation of concrete block foundations, basement walls, architectural facades, and concrete veneer systems.</p></a
+          <p class="cs-item-text">Expert installation of concrete block foundations, basement walls, architectural facades, and concrete veneer.</p></a
         >
       </li>
       <li class="cs-item">
@@ -66,7 +67,14 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 
   <!-- Background Image -->
   <picture class="cs-picture">
-    <img decoding="async" src="/assets/images/hero.jpg" alt="mountains" width="2250" height="1500" aria-hidden="true" />
+    <!--Mobile Image-->
+    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hero.jpg" | resize({ width: 640, height: 1400 }) | avif %}" type="image/avif"> <source media="(max-width: 600px)" srcset="{%
+    getUrl "/assets/images/hero.jpg" | resize({ width: 640, height: 1400 }) | webp %}" type="image/webp">
+    <!--Tablet Image-->
+    <source media="(min-width: 601px) and (max-width: 1300px)" srcset="{% getUrl "/assets/images/hero.jpg" | resize({ width: 2048, height: 2484 }) | avif %}" type="image/avif"> <source
+    media="(min-width: 601px) and (max-width: 1300px)" srcset="{% getUrl "/assets/images/hero.jpg" | resize({ width: 2048, height: 2484 }) | webp %}" type="image/webp">
+    <!-- Image -->
+    <img src="{% getUrl "/assets/images/hero.jpg" | resize({ width: 1, height: 1 }) | jpeg %}" alt="Front of the house stone veneer in South Dundas" width="1" height="1" decoding="async">
   </picture>
 </section>
 
@@ -154,74 +162,168 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
     </div>
     <ul class="cs-card-group">
       <li class="cs-item">
-        <a href="" class="cs-link">
+        <a href="/brickwork-installation-repair/" class="cs-link">
           <h3 class="cs-h3">Fireplaces & Chimneys</h3>
         </a>
         <picture class="cs-background">
-          <img decoding="async" loading="lazy" src="/assets/images/fireplace.jpg" alt="new build natural stone fireplace" width="413" height="320" aria-hidden="true" />
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/fireplace.jpg" | resize({ width: 576, height: 480 }) | avif %}" type="image/avif"> <source media="(max-width: 600px)"
+          srcset="{% getUrl "/assets/images/fireplace.jpg" | resize({ width: 576, height: 480 }) | webp %}" type="image/webp">
+          <!--Tablet Image-->
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/fireplace.jpg" | resize({ width: 634, height: 640 }) | avif %}" type="image/avif"> <source
+          media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/fireplace.jpg" | resize({ width: 634, height: 640 }) | webp %}" type="image/webp">
+          <!--Desktop Image-->
+          <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/fireplace.jpg" | resize({ width: 826, height: 640 }) | avif %}" type="image/avif"> <source media="(min-width: 1025px)"
+          srcset="{% getUrl "/assets/images/fireplace.jpg" | resize({ width: 826, height: 640 }) | webp %}" type="image/webp">
+          <!--Image-->
+          <img src="{% getUrl "/assets/images/fireplace.jpg" | resize({ width: 826, height: 640 }) | jpeg %}" alt="new build natural stone fireplace with oak hearth" width="413" height="320"
+          loading="lazy" decoding="async">
         </picture>
       </li>
       <li class="cs-item">
-        <a href="" class="cs-link">
+        <a href="/stone-veneer-installation-repair/" class="cs-link">
           <h3 class="cs-h3">Heritage Sites</h3>
         </a>
         <picture class="cs-background">
-          <img decoding="async" loading="lazy" src="/assets/images/heritage-fireplace.jpg" alt="A natural stone heritage fireplace" width="413" height="320" aria-hidden="true" />
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/heritage-fireplace.jpg" | resize({ width: 576, height: 480 }) | avif %}" type="image/avif"> <source media="(max-width:
+          600px)" srcset="{% getUrl "/assets/images/heritage-fireplace.jpg" | resize({ width: 576, height: 480 }) | webp %}" type="image/webp">
+          <!--Tablet Image-->
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/heritage-fireplace.jpg" | resize({ width: 634, height: 640 }) | avif %}" type="image/avif">
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/heritage-fireplace.jpg" | resize({ width: 634, height: 640 }) | webp %}" type="image/webp">
+          <!--Desktop Image-->
+          <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/heritage-fireplace.jpg" | resize({ width: 826, height: 640 }) | avif %}" type="image/avif"> <source media="(min-width:
+          1025px)" srcset="{% getUrl "/assets/images/heritage-fireplace.jpg" | resize({ width: 826, height: 640 }) | webp %}" type="image/webp"> <img src="{% getUrl
+          "/assets/images/heritage-fireplace.jpg" | resize({ width: 826, height: 640 }) | jpeg %}" alt="A natural stone heritage fireplace with concreate hearth" width="413" height="320"
+          loading="lazy" decoding="async">
         </picture>
       </li>
       <li class="cs-item">
-        <a href="" class="cs-link">
+        <a href="/stone-veneer-installation-repair/" class="cs-link">
           <h3 class="cs-h3">New Construction</h3>
         </a>
+
         <picture class="cs-background">
-          <img decoding="async" loading="lazy" src="/assets/images/house.jpg" alt="Fully stoned house wall" width="413" height="320" aria-hidden="true" />
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/house.jpg" | resize({ width: 576, height: 480 }) | avif %}" type="image/avif"> <source media="(max-width: 600px)"
+          srcset="{% getUrl "/assets/images/house.jpg" | resize({ width: 576, height: 480 }) | webp %}" type="image/webp">
+          <!--Tablet Image-->
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/house.jpg" | resize({ width: 634, height: 640 }) | avif %}" type="image/avif"> <source
+          media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/house.jpg" | resize({ width: 634, height: 640 }) | webp %}" type="image/webp">
+          <!--Desktop Image-->
+          <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/house.jpg" | resize({ width: 826, height: 640 }) | avif %}" type="image/avif"> <source media="(min-width: 1025px)"
+          srcset="{% getUrl "/assets/images/house.jpg" | resize({ width: 826, height: 640 }) | webp %}" type="image/webp"> <img src="{% getUrl "/assets/images/house.jpg" | resize({ width: 826, height:
+          640 }) | jpeg %}" alt="Full stone veneer on a home in South Dundas" width="413" height="320" loading="lazy" decoding="async">
         </picture>
       </li>
       <li class="cs-item">
-        <a href="" class="cs-link">
+        <a href="/poured-concreate-installation-repair/" class="cs-link">
           <h3 class="cs-h3">Patio, Sidewalks & Driveways</h3>
         </a>
         <picture class="cs-background">
-          <img decoding="async" loading="lazy" src="/assets/images/concrete-sidewalk.jpg" alt="muscular man flexing his muscles in a gym" width="413" height="320" aria-hidden="true" />
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/concrete-sidewalk.jpg" | resize({ width: 576, height: 480 }) | avif %}" type="image/avif"> <source media="(max-width:
+          600px)" srcset="{% getUrl "/assets/images/concrete-sidewalk.jpg" | resize({ width: 576, height: 480 }) | webp %}" type="image/webp">
+          <!--Tablet Image-->
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/concrete-sidewalk.jpg" | resize({ width: 634, height: 640 }) | avif %}" type="image/avif">
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/concrete-sidewalk.jpg" | resize({ width: 634, height: 640 }) | webp %}" type="image/webp">
+          <!--Desktop Image-->
+          <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/concrete-sidewalk.jpg" | resize({ width: 826, height: 640 }) | avif %}" type="image/avif"> <source media="(min-width:
+          1025px)" srcset="{% getUrl "/assets/images/concrete-sidewalk.jpg" | resize({ width: 826, height: 640 }) | webp %}" type="image/webp">
+          <!--Image-->
+          <img src="{% getUrl "/assets/images/concrete-sidewalk.jpg" | resize({ width: 826, height: 640 }) | jpeg %}" alt="Concreate sidewalk along a house in Iroquois Ontario" width="413"
+          height="320" loading="lazy" decoding="async">
         </picture>
       </li>
       <li class="cs-item">
         <a target="_blank" rel="nofollow" href="https://en.wikipedia.org/wiki/Red_Seal_Program" class="cs-link">
           <picture class="cs-background">
-            <img decoding="async" loading="lazy" src="/assets/images/red-seal.png" alt="Red seal certified masonry" width="413" height="320" aria-hidden="true" />
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/red-seal.png" | resize({ width: 1, height: 1 }) | avif %}" type="image/avif"> <source media="(max-width: 600px)"
+            srcset="{% getUrl "/assets/images/red-seal.png" | resize({ width: 1, height: 1 }) | webp %}" type="image/webp">
+            <!--Tablet Image-->
+            <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/red-seal.png" | resize({ width: 400, height: 400 }) | avif %}" type="image/avif"> <source
+            media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/red-seal.png" | resize({ width: 400, height: 400 }) | webp %}" type="image/webp">
+            <!--Desktop Image-->
+            <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/red-seal.png" | resize({ width: 400, height: 400 }) | avif %}" type="image/avif"> <source media="(min-width: 1025px)"
+            srcset="{% getUrl "/assets/images/red-seal.png" | resize({ width: 400, height: 400 }) | webp %}" type="image/webp">
+            <!--Image-->
+            <img src="{% getUrl "/assets/images/red-seal.png" | resize({ width: 400, height: 400 }) | png %}" alt="Ontario red seal certified" width="200" height="200" loading="lazy" decoding="async">
           </picture>
         </a>
       </li>
       <li class="cs-item">
-        <a href="" class="cs-link">
+        <a href="/concreate-masonry-cmu-installation-repair/" class="cs-link">
           <h3 class="cs-h3">Foundations</h3>
         </a>
         <picture class="cs-background">
-          <img decoding="async" loading="lazy" src="/assets/images/block.jpg" alt="A block foundation wall." width="413" height="320" aria-hidden="true" />
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/block.jpg" | resize({ width: 576, height: 480 }) | avif %}" type="image/avif"> <source media="(max-width: 600px)"
+          srcset="{% getUrl "/assets/images/block.jpg" | resize({ width: 576, height: 480 }) | webp %}" type="image/webp">
+          <!--Tablet Image-->
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/block.jpg" | resize({ width: 634, height: 640 }) | avif %}" type="image/avif"> <source
+          media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/block.jpg" | resize({ width: 634, height: 640 }) | webp %}" type="image/webp">
+          <!--Desktop Image-->
+          <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/block.jpg" | resize({ width: 826, height: 640 }) | avif %}" type="image/avif"> <source media="(min-width: 1025px)"
+          srcset="{% getUrl "/assets/images/block.jpg" | resize({ width: 826, height: 640 }) | webp %}" type="image/webp">
+          <!--Image-->
+          <img src="{% getUrl "/assets/images/block.jpg" | resize({ width: 826, height: 640 }) | jpeg %}" alt="A block foundation wall at Doran Creek Estates" width="413" height="320" loading="lazy"
+          decoding="async">
         </picture>
       </li>
       <li class="cs-item">
-        <a href="" class="cs-link">
+        <a href="/stone-veneer-installation-repair/" class="cs-link">
           <h3 class="cs-h3">Outdoor Living Space</h3>
         </a>
         <picture class="cs-background">
-          <img decoding="async" loading="lazy" src="/assets/images/outdoor-kitchen.jpg" alt="muscular man flexing his muscles in a gym" width="413" height="320" aria-hidden="true" />
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/outdoor-kitchen.jpg" | resize({ width: 576, height: 480 }) | avif %}" type="image/avif"> <source media="(max-width:
+          600px)" srcset="{% getUrl "/assets/images/outdoor-kitchen.jpg" | resize({ width: 576, height: 480 }) | webp %}" type="image/webp">
+          <!--Tablet Image-->
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/outdoor-kitchen.jpg" | resize({ width: 634, height: 640 }) | avif %}" type="image/avif"> <source
+          media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/outdoor-kitchen.jpg" | resize({ width: 634, height: 640 }) | webp %}" type="image/webp">
+          <!--Desktop Image-->
+          <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/outdoor-kitchen.jpg" | resize({ width: 826, height: 640 }) | avif %}" type="image/avif"> <source media="(min-width:
+          1025px)" srcset="{% getUrl "/assets/images/outdoor-kitchen.jpg" | resize({ width: 826, height: 640 }) | webp %}" type="image/webp"> <img src="{% getUrl "/assets/images/outdoor-kitchen.jpg" |
+          resize({ width: 826, height: 640 }) | jpeg %}" alt="Outdoor stone and firebricked fireplace" width="413" height="320" loading="lazy" decoding="async">
         </picture>
       </li>
       <li class="cs-item">
-        <a href="" class="cs-link">
+        <a href="/parging-installation-repair/" class="cs-link">
           <h3 class="cs-h3">Parging</h3>
         </a>
         <picture class="cs-background">
-          <img decoding="async" loading="lazy" src="/assets/images/parging.jpg" alt="portland cement smeared on a block wall" width="413" height="320" aria-hidden="true" />
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/parging.jpg" | resize({ width: 576, height: 480 }) | avif %}" type="image/avif"> <source media="(max-width: 600px)"
+          srcset="{% getUrl "/assets/images/parging.jpg" | resize({ width: 576, height: 480 }) | webp %}" type="image/webp">
+          <!--Tablet Image-->
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/parging.jpg" | resize({ width: 634, height: 640 }) | avif %}" type="image/avif"> <source
+          media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/parging.jpg" | resize({ width: 634, height: 640 }) | webp %}" type="image/webp">
+          <!--Desktop Image-->
+          <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/parging.jpg" | resize({ width: 826, height: 640 }) | avif %}" type="image/avif"> <source media="(min-width: 1025px)"
+          srcset="{% getUrl "/assets/images/parging.jpg" | resize({ width: 826, height: 640 }) | webp %}" type="image/webp">
+          <!-- Image -->
+          <img src="{% getUrl "/assets/images/parging.jpg" | resize({ width: 826, height: 640 }) | jpeg %}" alt="portland cement smeared on a block wall" width="413" height="320" loading="lazy"
+          decoding="async">
         </picture>
       </li>
       <li class="cs-item">
-        <a href="" class="cs-link">
+        <a href="/poured-concreate-installation-repair/" class="cs-link">
           <h3 class="cs-h3">Concrete Slabs</h3>
         </a>
         <picture class="cs-background">
-          <img decoding="async" loading="lazy" src="/assets/images/concrete-slab.jpg" alt="a concrete floor for a residential house" width="413" height="320" aria-hidden="true" />
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/concrete-slab.jpg" | resize({ width: 576, height: 480 }) | avif %}" type="image/avif"> <source media="(max-width: 600px)"
+          srcset="{% getUrl "/assets/images/concrete-slab.jpg" | resize({ width: 576, height: 480 }) | webp %}" type="image/webp">
+          <!--Tablet Image-->
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/concrete-slab.jpg" | resize({ width: 634, height: 640 }) | avif %}" type="image/avif"> <source
+          media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/concrete-slab.jpg" | resize({ width: 634, height: 640 }) | webp %}" type="image/webp">
+          <!--Desktop Image-->
+          <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/concrete-slab.jpg" | resize({ width: 826, height: 640 }) | avif %}" type="image/avif"> <source media="(min-width:
+          1025px)" srcset="{% getUrl "/assets/images/concrete-slab.jpg" | resize({ width: 826, height: 640 }) | webp %}" type="image/webp">
+          <!--Image -->
+          <img src="{% getUrl "/assets/images/concrete-slab.jpg" | resize({ width: 826, height: 640 }) | jpeg %}" alt="a concrete floor for a residential house" width="413" height="320" loading="lazy"
+          decoding="async">
         </picture>
       </li>
     </ul>
@@ -284,7 +386,18 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 
 <section id="RTsbs-601">
   <picture class="cs-background">
-    <img loading="lazy" decoding="async" src="/assets/images/stone-retainer-wall.jpg" alt="" width="960" height="796" />
+    <!--Mobile Image-->
+    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/stone-retainer-wall.jpg" | resize({ width: 640, height: 512 }) | avif %}" type="image/avif"> <source media="(max-width: 600px)"
+    srcset="{% getUrl "/assets/images/stone-retainer-wall.jpg" | resize({ width: 640, height: 512 }) | webp %}" type="image/webp">
+    <!--Tablet Image-->
+    <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/stone-retainer-wall.jpg" | resize({ width: 1024, height: 1462 }) | avif %}" type="image/avif"> <source
+    media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/stone-retainer-wall.jpg" | resize({ width: 1024, height: 1462 }) | webp %}" type="image/webp">
+    <!--Desktop Image-->
+    <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/stone-retainer-wall.jpg" | resize({ width: 1920, height: 1630 }) | avif %}" type="image/avif"> <source media="(min-width:
+    1025px)" srcset="{% getUrl "/assets/images/stone-retainer-wall.jpg" | resize({ width: 1920, height: 1630 }) | webp %}" type="image/webp">
+    <!--Image -->
+    <img src="{% getUrl "/assets/images/stone-retainer-wall.jpg" | resize({ width: 1920, height: 1630 }) | jpeg %}" alt="A natural stone retainer wall" width="960" height="815" loading="lazy"
+    decoding="async">
   </picture>
   <div class="cs-container">
     <div class="cs-content">
@@ -308,7 +421,18 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 
 <section id="RTsbsr-601">
   <picture class="cs-background">
-    <img loading="lazy" decoding="async" src="/assets/images/stone-veneer-house.jpg" alt="" width="960" height="796" />
+    <!--Mobile Image-->
+    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/stone-veneer-house.jpg" | resize({ width: 640, height: 512 }) | avif %}" type="image/avif"> <source media="(max-width: 600px)"
+    srcset="{% getUrl "/assets/images/stone-veneer-house.jpg" | resize({ width: 640, height: 512 }) | webp %}" type="image/webp">
+    <!--Tablet Image-->
+    <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/stone-veneer-house.jpg" | resize({ width: 1024, height: 1498 }) | avif %}" type="image/avif"> <source
+    media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/stone-veneer-house.jpg" | resize({ width: 1024, height: 1498 }) | webp %}" type="image/webp">
+    <!--Desktop Image-->
+    <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/stone-veneer-house.jpg" | resize({ width: 1920, height: 1724 }) | avif %}" type="image/avif"> <source media="(min-width:
+    1025px)" srcset="{% getUrl "/assets/images/stone-veneer-house.jpg" | resize({ width: 1920, height: 1724 }) | webp %}" type="image/webp">
+    <!--Image -->
+    <img src="{% getUrl "/assets/images/stone-veneer-house.jpg" | resize({ width: 1920, height: 1724 }) | jpeg %}" alt="A white stone veneer house with a concreate pad step" width="960" height="862"
+    loading="lazy" decoding="async">
   </picture>
   <div class="cs-container">
     <div class="cs-content">
@@ -341,9 +465,20 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 
 <section id="RTsbst-601">
   <picture class="cs-background">
-    <img src="/assets/images/crumbling-brick-chimney.webp" alt="" width="960" height="796" loading="lazy" decoding="async" />
+    <!--Mobile Image-->
+    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/crumbling-brick-chimney.webp" | resize({ width: 640, height: 512 }) | avif %}" type="image/avif"> <source media="(max-width:
+    600px)" srcset="{% getUrl "/assets/images/crumbling-brick-chimney.webp" | resize({ width: 640, height: 512 }) | webp %}" type="image/webp">
+    <!--Tablet Image-->
+    <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/crumbling-brick-chimney.webp" | resize({ width: 1024, height: 1764 }) | avif %}" type="image/avif">
+    <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/crumbling-brick-chimney.webp" | resize({ width: 1024, height: 1764 }) | webp %}" type="image/webp">
+    <!--Desktop Image-->
+    <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/crumbling-brick-chimney.webp" | resize({ width: 1920, height: 1878 }) | avif %}" type="image/avif"> <source media="(min-width:
+    1025px)" srcset="{% getUrl "/assets/images/crumbling-brick-chimney.webp" | resize({ width: 1920, height: 1878 }) | webp %}" type="image/webp">
+    <!--Image -->
+    <img src="{% getUrl "/assets/images/crumbling-brick-chimney.webp" | resize({ width: 1920, height: 1878 }) | jpeg %}" alt="crumbling chimney made of brick from 1960's" width="960" height="939"
+    loading="lazy" decoding="async">
   </picture>
-  <img class="cs-graphic" src="/assets/svgs/emergency-repair.svg" alt="emergency repair banner" width="960" height="796" loading="lazy" decoding="async" />
+  <img class="cs-graphic" src="/assets/svgs/emergency-repair.svg" alt="emergency repair banner" width="87" height="796" loading="lazy" decoding="async" />
   <div class="cs-container">
     <div class="cs-content">
       <span class="cs-topper">Emergency Repair Services</span>
@@ -416,7 +551,18 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
         <label id="step1-2433" class="cs-tab" for="service1">01 Doran Creek Estates</label>
         <div class="cs-item">
           <picture class="cs-picture">
-            <img src="/assets/images/doran-creek/house-1.jpg" alt="" width="389" height="420" loading="lazy" decoding="async" />
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/doran-creek/house-1.jpg" | resize({ width: 294, height: 428 }) | avif %}" type="image/avif"> <source media="(max-width:
+            600px)" srcset="{% getUrl "/assets/images/doran-creek/house-1.jpg" | resize({ width: 294, height: 428 }) | webp %}" type="image/webp">
+            <!--Tablet Image-->
+            <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/doran-creek/house-1.jpg" | resize({ width: 632, height: 840 }) | avif %}" type="image/avif">
+            <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/doran-creek/house-1.jpg" | resize({ width: 632, height: 840 }) | webp %}" type="image/webp">
+            <!--Desktop Image-->
+            <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/doran-creek/house-1.jpg" | resize({ width: 778, height: 840 }) | avif %}" type="image/avif"> <source
+            media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/doran-creek/house-1.jpg" | resize({ width: 778, height: 840 }) | webp %}" type="image/webp">
+            <!--Image-->
+            <img src="{% getUrl "/assets/images/doran-creek/house-1.jpg" | resize({ width: 778, height: 840 }) | jpeg %}" alt="Stone Veneer on a house at Doran Creek" width="389" height="420"
+            loading="lazy" decoding="async">
           </picture>
           <div class="cs-item-content">
             <div class="cs-item-icon" aria-hidden="true">
@@ -453,7 +599,19 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
         <label id="step2-2433" class="cs-tab" for="service2">02 Hill Island</label>
         <div class="cs-item">
           <picture class="cs-picture">
-            <img src="/assets/images/hill-island/stone-fireplace.jpg" alt="" width="389" height="420" loading="lazy" decoding="async" />
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hill-island/stone-fireplace.jpg" | resize({ width: 576, height: 840 }) | avif %}" type="image/avif"> <source
+            media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hill-island/stone-fireplace.jpg" | resize({ width: 576, height: 840 }) | webp %}" type="image/webp">
+            <!--Tablet Image-->
+            <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/hill-island/stone-fireplace.jpg" | resize({ width: 632, height: 840 }) | avif %}"
+            type="image/avif"> <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/hill-island/stone-fireplace.jpg" | resize({ width: 632, height: 840 }) |
+            webp %}" type="image/webp">
+            <!--Desktop Image-->
+            <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/hill-island/stone-fireplace.jpg" | resize({ width: 778, height: 840 }) | avif %}" type="image/avif"> <source
+            media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/hill-island/stone-fireplace.jpg" | resize({ width: 778, height: 840 }) | webp %}" type="image/webp">
+            <!--Image -->
+            <img src="{% getUrl "/assets/images/hill-island/stone-fireplace.jpg" | resize({ width: 778, height: 840 }) | jpeg %}" alt="natural stone fireplace at Hill Island" width="389" height="420"
+            loading="lazy" decoding="async">
           </picture>
           <div class="cs-item-content">
             <div class="cs-item-icon" aria-hidden="true">
@@ -698,7 +856,16 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
   <div class="cs-container">
     <div class="cs-card">
       <picture class="cs-picture">
-        <img class="cs-image" loading="lazy" decoding="async" src="/assets/images/review.png" alt="profile picture" width="120" height="120" />
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/review.png" | resize({ width: 200, height: 200 }) | avif %}" type="image/avif"> <source media="(max-width: 600px)"
+        srcset="{% getUrl "/assets/images/review.png" | resize({ width: 200, height: 200 }) | webp %}" type="image/webp">
+        <!--Tablet Image-->
+        <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/review.png" | resize({ width: 280, height: 280 }) | avif %}" type="image/avif"> <source
+        media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/review.png" | resize({ width: 280, height: 280 }) | webp %}" type="image/webp">
+        <!--Desktop Image-->
+        <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/review.png" | resize({ width: 280, height: 280 }) | avif %}" type="image/avif"> <source media="(min-width: 1025px)"
+        srcset="{% getUrl "/assets/images/review.png" | resize({ width: 280, height: 280 }) | webp %}" type="image/webp"> <img src="{% getUrl "/assets/images/review.png" | resize({ width: 280, height:
+        280 }) | png %}" alt="profile picture" width="140" height="140" loading="lazy" decoding="async">
       </picture>
 
       <div class="cs-wrapper">

@@ -12,6 +12,16 @@
     </div>
   </div>
   <picture class="cs-picture">
-    <img src="/assets/images/cta.jpg" alt="stone house" width="1920" height="426" loading="lazy" decoding="async">
-  </picture>
+	<!--Mobile Image-->
+	<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cta.jpg" | resize({ width: 640, height: 828 }) | avif %}" type="image/avif">
+	<source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cta.jpg" | resize({ width: 640, height: 828 }) | webp %}" type="image/webp">
+	<!--Tablet Image-->
+	<source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/cta.jpg" | resize({ width: 2048, height: 778 }) | avif %}" type="image/avif">
+	<source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/cta.jpg" | resize({ width: 2048, height: 778 }) | webp %}" type="image/webp">
+	<!--Desktop Image-->
+	<source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/cta.jpg" | resize({ width: 2500, height: 677 }) | avif %}" type="image/avif">
+	<source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/cta.jpg" | resize({ width: 2500, height: 677 }) | webp %}" type="image/webp">
+  <!--Image-->
+	<img src="{% getUrl "/assets/images/cta.jpg" | resize({ width: 2500, height: 677 }) | jpeg %}" alt="natural stone facade on a garage door" width="1920" height="520" loading="lazy" decoding="async">
+</picture>
 </section>

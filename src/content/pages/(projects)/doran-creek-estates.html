@@ -5,7 +5,8 @@ permalink: "/doran-creek-estates/"
 ---
 
 {% extends "layouts/base.html" %} {% block head %}
-
+<!-- banner -->
+<link rel="preload" as="image" href="{% getUrl "/assets/images/banner.jpeg" | resize({ width: 640, height: 618 }) | webp %}" />
 <link rel="stylesheet" href="/assets/css/projects.css" />
 {% endblock %} {% block body %} {% from "sections/banner.html" import banner %} {{ banner( title="Doran Creek Estates", url=page.url )}}
 
@@ -18,48 +19,144 @@ permalink: "/doran-creek-estates/"
     <div class="cs-content">
       <span class="cs-topper">Project #1</span>
       <h1 class="cs-title">Doran Creek Estates</h1>
-      <p class="cs-text">Located just outside Iroquois, Ontario, the Doran Creek Estates subdivision comprises more than 20 homes. All masonry completed by Tibben Masonry.</p>
+      <p class="cs-text">Just outside Iroquois, Ontario, Doran Creek Estates is a subdivision of over 20 homes, all featuring masonry work completed by Tibben Masonry.</p>
     </div>
 
     <div class="cs-image-group">
       <div class="cs-row cs-row-1">
         <!-- Row 1-->
         <picture class="cs-picture cs-picture-1">
-          <img loading="lazy" decoding="async" src="/assets/images/doran-creek/block.jpg" alt="new hallway" width="420" height="567" />
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/doran-creek/block.jpg" | resize({ width: 576, height: 284 }) | avif %}" type="image/avif"> <source media="(max-width:
+          600px)" srcset="{% getUrl "/assets/images/doran-creek/block.jpg" | resize({ width: 576, height: 284 }) | webp %}" type="image/webp">
+          <!--Tablet Image-->
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/doran-creek/block.jpg" | resize({ width: 634, height: 908 }) | avif %}" type="image/avif">
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/doran-creek/block.jpg" | resize({ width: 634, height: 908 }) | webp %}" type="image/webp">
+          <!--Desktop Image-->
+          <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/doran-creek/block.jpg" | resize({ width: 826, height: 1134 }) | avif %}" type="image/avif"> <source media="(min-width:
+          1025px)" srcset="{% getUrl "/assets/images/doran-creek/block.jpg" | resize({ width: 826, height: 1134 }) | webp %}" type="image/webp"> <img src="{% getUrl
+          "/assets/images/doran-creek/block.jpg" | resize({ width: 826, height: 1134 }) | jpeg %}" alt="Block foundation wall at Doran Creek" width="413" height="567" loading="lazy" decoding="async">
         </picture>
+
         <picture class="cs-picture cs-picture-2">
-          <img loading="lazy" decoding="async" src="/assets/images/doran-creek/concrete-slab.jpg" alt="new home construction" width="420" height="630" />
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/doran-creek/concrete-slab.jpg" | resize({ width: 576, height: 314 }) | avif %}" type="image/avif"> <source
+          media="(max-width: 600px)" srcset="{% getUrl "/assets/images/doran-creek/concrete-slab.jpg" | resize({ width: 576, height: 314 }) | webp %}" type="image/webp">
+          <!--Tablet Image-->
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/doran-creek/concrete-slab.jpg" | resize({ width: 634, height: 1006 }) | avif %}"
+          type="image/avif"> <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/doran-creek/concrete-slab.jpg" | resize({ width: 634, height: 1006 }) | webp
+          %}" type="image/webp">
+          <!--Desktop Image-->
+          <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/doran-creek/concrete-slab.jpg" | resize({ width: 826, height: 1258 }) | avif %}" type="image/avif"> <source
+          media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/doran-creek/concrete-slab.jpg" | resize({ width: 826, height: 1258 }) | webp %}" type="image/webp">
+          <!--Image-->
+          <img src="{% getUrl "/assets/images/doran-creek/concrete-slab.jpg" | resize({ width: 826, height: 1258 }) | jpeg %}" alt="Concreate poured basement floor" width="413" height="629"
+          loading="lazy" decoding="async">
         </picture>
+
         <picture class="cs-picture cs-picture-3">
-          <img loading="lazy" decoding="async" src="/assets/images/doran-creek/house-1.jpg" alt="building a new wall" width="420" height="512" />
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/doran-creek/house-1.jpg" | resize({ width: 576, height: 256 }) | avif %}" type="image/avif"> <source media="(max-width:
+          600px)" srcset="{% getUrl "/assets/images/doran-creek/house-1.jpg" | resize({ width: 576, height: 256 }) | webp %}" type="image/webp">
+          <!--Tablet Image-->
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/doran-creek/house-1.jpg" | resize({ width: 634, height: 820 }) | avif %}" type="image/avif">
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/doran-creek/house-1.jpg" | resize({ width: 634, height: 820 }) | webp %}" type="image/webp">
+          <!--Desktop Image-->
+          <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/doran-creek/house-1.jpg" | resize({ width: 826, height: 1024 }) | avif %}" type="image/avif"> <source media="(min-width:
+          1025px)" srcset="{% getUrl "/assets/images/doran-creek/house-1.jpg" | resize({ width: 826, height: 1024 }) | webp %}" type="image/webp"> <img src="{% getUrl
+          "/assets/images/doran-creek/house-1.jpg" | resize({ width: 826, height: 1024 }) | jpeg %}" alt="Stone Veneer on a house at Doran Creek" width="413" height="512" loading="lazy"
+          decoding="async">
         </picture>
-        <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
       </div>
       <!-- Row 2 -->
       <div class="cs-row cs-row-2">
         <picture class="cs-picture cs-picture-1">
-          <img loading="lazy" decoding="async" src="/assets/images/doran-creek/house-2.jpg" alt="new kitchen" width="420" height="492" />
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/doran-creek/house-2.jpg" | resize({ width: 576, height: 246 }) | avif %}" type="image/avif"> <source media="(max-width:
+          600px)" srcset="{% getUrl "/assets/images/doran-creek/house-2.jpg" | resize({ width: 576, height: 246 }) | webp %}" type="image/webp">
+          <!--Tablet Image-->
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/doran-creek/house-2.jpg" | resize({ width: 634, height: 788 }) | avif %}" type="image/avif">
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/doran-creek/house-2.jpg" | resize({ width: 634, height: 788 }) | webp %}" type="image/webp">
+          <!--Desktop Image-->
+          <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/doran-creek/house-2.jpg" | resize({ width: 826, height: 984 }) | avif %}" type="image/avif"> <source media="(min-width:
+          1025px)" srcset="{% getUrl "/assets/images/doran-creek/house-2.jpg" | resize({ width: 826, height: 984 }) | webp %}" type="image/webp"> <img src="{% getUrl
+          "/assets/images/doran-creek/house-2.jpg" | resize({ width: 826, height: 984 }) | jpeg %}" alt="Stone Veneer wrapped around the house" width="413" height="492" loading="lazy"
+          decoding="async">
         </picture>
+
         <picture class="cs-picture cs-picture-2">
-          <img loading="lazy" decoding="async" src="/assets/images/doran-creek/house.jpg" alt="apartment addition" width="420" height="517" />
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/doran-creek/house.jpg" | resize({ width: 576, height: 258 }) | avif %}" type="image/avif"> <source media="(max-width:
+          600px)" srcset="{% getUrl "/assets/images/doran-creek/house.jpg" | resize({ width: 576, height: 258 }) | webp %}" type="image/webp">
+          <!--Tablet Image-->
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/doran-creek/house.jpg" | resize({ width: 634, height: 828 }) | avif %}" type="image/avif">
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/doran-creek/house.jpg" | resize({ width: 634, height: 828 }) | webp %}" type="image/webp">
+          <!-- Desktop Image -->
+          <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/doran-creek/house.jpg" | resize({ width: 826, height: 1034 }) | avif %}" type="image/avif"> <source media="(min-width:
+          1025px)" srcset="{% getUrl "/assets/images/doran-creek/house.jpg" | resize({ width: 826, height: 1034 }) | webp %}" type="image/webp"> <img src="{% getUrl
+          "/assets/images/doran-creek/house.jpg" | resize({ width: 826, height: 1034 }) | jpeg %}" alt="natural stone wraped around the house" width="413" height="517" loading="lazy" decoding="async">
         </picture>
+
         <picture class="cs-picture cs-picture-3">
-          <img loading="lazy" decoding="async" src="/assets/images/doran-creek/key-stone.jpg" alt="kew kitchen cabinets" width="420" height="629" />
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/doran-creek/key-stone.jpg" | resize({ width: 576, height: 314 }) | avif %}" type="image/avif"> <source media="(max-width:
+          600px)" srcset="{% getUrl "/assets/images/doran-creek/key-stone.jpg" | resize({ width: 576, height: 314 }) | webp %}" type="image/webp">
+          <!--Tablet Image-->
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/doran-creek/key-stone.jpg" | resize({ width: 634, height: 1006 }) | avif %}" type="image/avif">
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/doran-creek/key-stone.jpg" | resize({ width: 634, height: 1006 }) | webp %}" type="image/webp">
+          <!--Desktop Image-->
+          <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/doran-creek/key-stone.jpg" | resize({ width: 826, height: 1258 }) | avif %}" type="image/avif"> <source
+          media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/doran-creek/key-stone.jpg" | resize({ width: 826, height: 1258 }) | webp %}" type="image/webp"> <img src="{% getUrl
+          "/assets/images/doran-creek/key-stone.jpg" | resize({ width: 826, height: 1258 }) | jpeg %}" alt="key stone pattern out of natural stone" width="413" height="629" loading="lazy"
+          decoding="async">
         </picture>
-        <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
       </div>
       <!-- Row 3 -->
       <div class="cs-row cs-row-3">
         <picture class="cs-picture cs-picture-1">
-          <img loading="lazy" decoding="async" src="/assets/images/doran-creek/outdoor-kitchen.jpg" alt="new black window structure" width="420" height="625" />
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/doran-creek/outdoor-kitchen.jpg" | resize({ width: 576, height: 312 }) | avif %}" type="image/avif"> <source
+          media="(max-width: 600px)" srcset="{% getUrl "/assets/images/doran-creek/outdoor-kitchen.jpg" | resize({ width: 576, height: 312 }) | webp %}" type="image/webp">
+          <!--Tablet Image-->
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/doran-creek/outdoor-kitchen.jpg" | resize({ width: 634, height: 1000 }) | avif %}"
+          type="image/avif"> <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/doran-creek/outdoor-kitchen.jpg" | resize({ width: 634, height: 1000 }) | webp
+          %}" type="image/webp">
+          <!--Desktop Image-->
+          <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/doran-creek/outdoor-kitchen.jpg" | resize({ width: 826, height: 1250 }) | avif %}" type="image/avif"> <source
+          media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/doran-creek/outdoor-kitchen.jpg" | resize({ width: 826, height: 1250 }) | webp %}" type="image/webp">
+          <!-- Image -->
+          <img src="{% getUrl "/assets/images/doran-creek/outdoor-kitchen.jpg" | resize({ width: 826, height: 1250 }) | jpeg %}" alt="Outdoor stone and firebricked fireplace" width="413" height="625"
+          loading="lazy" decoding="async">
         </picture>
+
         <picture class="cs-picture cs-picture-2">
-          <img loading="lazy" decoding="async" src="/assets/images/doran-creek/solider-corse.jpg" alt="kitchen rebovation" width="420" height="452" />
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/doran-creek/solider-corse.jpg" | resize({ width: 576, height: 226 }) | avif %}" type="image/avif"> <source
+          media="(max-width: 600px)" srcset="{% getUrl "/assets/images/doran-creek/solider-corse.jpg" | resize({ width: 576, height: 226 }) | webp %}" type="image/webp">
+          <!--Tablet Image-->
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/doran-creek/solider-corse.jpg" | resize({ width: 634, height: 724 }) | avif %}"
+          type="image/avif"> <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/doran-creek/solider-corse.jpg" | resize({ width: 634, height: 724 }) | webp
+          %}" type="image/webp">
+          <!--Desktop Image-->
+          <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/doran-creek/solider-corse.jpg" | resize({ width: 826, height: 904 }) | avif %}" type="image/avif"> <source
+          media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/doran-creek/solider-corse.jpg" | resize({ width: 826, height: 904 }) | webp %}" type="image/webp"> <img src="{% getUrl
+          "/assets/images/doran-creek/solider-corse.jpg" | resize({ width: 826, height: 904 }) | jpeg %}" alt="circular solider corse around an oval window" width="413" height="452" loading="lazy"
+          decoding="async">
         </picture>
+
         <picture class="cs-picture cs-picture-3">
-          <img loading="lazy" decoding="async" src="/assets/images/doran-creek/house-3.jpg" alt="bathroom renovation" width="420" height="629" />
+          <!--Mobile Image-->
+          <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/doran-creek/house-3.jpg" | resize({ width: 576, height: 314 }) | avif %}" type="image/avif"> <source media="(max-width:
+          600px)" srcset="{% getUrl "/assets/images/doran-creek/house-3.jpg" | resize({ width: 576, height: 314 }) | webp %}" type="image/webp">
+          <!--Tablet Image-->
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/doran-creek/house-3.jpg" | resize({ width: 634, height: 1006 }) | avif %}" type="image/avif">
+          <source media="(min-width: 601px) and (max-width: 1024px)" srcset="{% getUrl "/assets/images/doran-creek/house-3.jpg" | resize({ width: 634, height: 1006 }) | webp %}" type="image/webp">
+          <!--Desktop Image-->
+          <source media="(min-width: 1025px)" srcset="{% getUrl "/assets/images/doran-creek/house-3.jpg" | resize({ width: 826, height: 1258 }) | avif %}" type="image/avif"> <source media="(min-width:
+          1025px)" srcset="{% getUrl "/assets/images/doran-creek/house-3.jpg" | resize({ width: 826, height: 1258 }) | webp %}" type="image/webp"> <img src="{% getUrl
+          "/assets/images/doran-creek/house-3.jpg" | resize({ width: 826, height: 1258 }) | jpeg %}" alt="Stone veneer skirt and ceils wrapping around the font of the house" width="413" height="629"
+          loading="lazy" decoding="async">
         </picture>
-        <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
       </div>
     </div>
 

@@ -4,6 +4,6 @@ description: ""
 permalink: "/about/"
 ---
 
-{% extends "layouts/base.html" %} {% block head %}
+{% extends "layouts/base.html" %} {% block head %} <link rel="preload" as="image" href="{% getUrl "/assets/images/banner.jpeg" | resize({ width: 640, height: 618 }) | webp %}" />
 <link rel="stylesheet" href="/assets/css/about.css" />
 {% endblock %} {% block body %} {% from "sections/banner.html" import banner %} {{ banner( title="About Us", url=page.url )}} {% include 'sections/cta.html' %} {% endblock %}

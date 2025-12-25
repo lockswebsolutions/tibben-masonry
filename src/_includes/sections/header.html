@@ -18,11 +18,10 @@
                     <img class="cs-link-icon" src="/assets/svgs/clock.svg" alt="logo" width="20" height="20" aria-hidden="true" decoding="async">
                     Mon - Sat: 7A.M. To 8P.M.
                 </a>
-            
             </div>
             <div class="cs-top-social">
-                <a href="{{client.socials.facebook}}" class="cs-social-link">
-                    <img class="cs-social-icon" target="_blank" src="/assets/svgs/facebook.svg" alt="facebook icon" width="12" height="12" aria-hidden="true" decoding="async">
+                <a href="{{client.socials.facebook}}" target="_blank" class="cs-social-link">
+                    <img class="cs-social-icon" src="/assets/svgs/facebook.svg" alt="facebook icon" width="12" height="12" aria-hidden="true" decoding="async">
                 </a>
             </div>
         </div>
@@ -58,28 +57,25 @@
                     <!-- Note: When copying this dropdown, update the id attribute with an appropriate name (e.g., "services-dropdown-toggle", "products-dropdown-toggle") and ensure the aria-labelledby attribute on the ul matches the button's id -->
                     <!--Copy and paste this cs-dropdown list item and replace any .cs-li with this cs-dropdown group to make a new dropdown and it will work-->
                     <li class="cs-li cs-dropdown">
-                        <button class="cs-li-link cs-dropdown-button {% if page.fileSlug in ['/brick-veneer-installation-repair/', '/stone-veneer-installation-repair/' ] %} cs-active {% endif %}" aria-haspopup="menu" aria-expanded="false" id="projects-dropdown-toggle">
+                        <button class="cs-li-link cs-dropdown-button {% if page.fileSlug in ['/brickwork-installation-repair/', '/stone-veneer-installation-repair/', '/poured-concreate-installation-repair/', '/parging-installation-repair/' ] %} cs-active {% endif %}" aria-haspopup="menu" aria-expanded="false" id="projects-dropdown-toggle">
                             Services
                             <img class="cs-drop-icon" src="/assets/svgs/dropdown.svg" alt="icon" width="15" height="15" decoding="async" aria-hidden="true">
                         </button>
                         <ul  class="cs-drop-ul" aria-hidden="true" aria-labelledby="projects-dropdown-toggle">
                             <li class="cs-drop-li">
-                                <a href="/brick-veneer-installation-repair/" class="cs-li-link cs-drop-link {% if page.url == "/brick-veneer-installation-repair/" %} cs-active {% endif %}" {% if page.url == "/brick-veneer-installation-repair/" %} aria-current="page" {% endif %}>Brick Masonry</a>
+                                <a href="/brickwork-installation-repair/" class="cs-li-link cs-drop-link {% if page.url == "/brickwork-installation-repair/" %} cs-active {% endif %}" {% if page.url == "/brick-veneer-installation-repair/" %} aria-current="page" {% endif %}>Brick Masonry</a>
                             </li>
                             <li class="cs-drop-li">
-                                <a href="/stone-veneer-installation-repair/" class="cs-li-link cs-drop-link {% if page.url == "/stone-veneer-installation-repair/" %} cs-active {% endif %}" {% if page.url == "/stone-veneer-installation-repair/" %} aria-current="page" {% endif %}>Stone Veneer Masonry</a>
+                                <a href="/stone-veneer-installation-repair/" class="cs-li-link cs-drop-link {% if page.url == "/stone-veneer-installation-repair/" %} cs-active {% endif %}" {% if page.url == "/stone-veneer-installation-repair/" %} aria-current="page" {% endif %}>Stone Masonry</a>
                             </li>
                             <li class="cs-drop-li">
-                                <a href="/natural-stone-installation-repair/" class="cs-li-link cs-drop-link {% if page.url == "/natural-stone-installation-repair/" %} cs-active {% endif %}" {% if page.url == "/natural-stone-installation-repair/" %} aria-current="page" {% endif %}>Natural Stone Masonry</a>
+                                <a href="/concreate-masonry-cmu-installation-repair/" class="cs-li-link cs-drop-link {% if page.url == "/concreate-masonry-cmu-installation-repair/" %} cs-active {% endif %}" {% if page.url == "/concreate-masonry-cmu-installation-repair/" %} aria-current="page" {% endif %}>Concreate (CMU) Masonry</a>
                             </li>
                              <li class="cs-drop-li">
-                                <a href="/natural-stone-installation-repair/" class="cs-li-link cs-drop-link {% if page.url == "/natural-stone-installation-repair/" %} cs-active {% endif %}" {% if page.url == "/natural-stone-installation-repair/" %} aria-current="page" {% endif %}>Concreate</a>
-                            </li>
+                                <a href="/poured-concreate-installation-repair/" class="cs-li-link cs-drop-link {% if page.url == "/poured-concreate-installation-repair/" %} cs-active {% endif %}" {% if page.url == "/poured-concreate-installation-repair/" %} aria-current="page" {% endif %}>Poured Concreate</a>
+                            </li> 
                              <li class="cs-drop-li">
-                                <a href="/natural-stone-installation-repair/" class="cs-li-link cs-drop-link {% if page.url == "/natural-stone-installation-repair/" %} cs-active {% endif %}" {% if page.url == "/natural-stone-installation-repair/" %} aria-current="page" {% endif %}>Block</a>
-                            </li>
-                             <li class="cs-drop-li">
-                                <a href="/natural-stone-installation-repair/" class="cs-li-link cs-drop-link {% if page.url == "/natural-stone-installation-repair/" %} cs-active {% endif %}" {% if page.url == "/natural-stone-installation-repair/" %} aria-current="page" {% endif %}>Parging</a>
+                                <a href="/parging-installation-repair/" class="cs-li-link cs-drop-link {% if page.url == "/parging-installation-repair/" %} cs-active {% endif %}" {% if page.url == "/parging-installation-repair/" %} aria-current="page" {% endif %}>Parging</a>
                             </li>
                         </ul>
                     </li>
@@ -110,7 +106,7 @@
                 </ul>
             </div>
         </nav>
-        <a href="/contact/" class="cs-button-solid cs-nav-button">Contact Us</a>
+        <a href="/contact/" class="cs-button-solid cs-nav-button">Request A Quote</a>
         <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
         <button id="dark-mode-toggle" aria-label="dark mode toggle" aria-pressed="false">
             <img class="cs-moon" aria-hidden="true" src="/assets/svgs/moon.svg" decoding="async" alt="" width="15" height="15">
